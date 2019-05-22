@@ -1,0 +1,19 @@
+@charset "utf-8";
+/*=====================
+General Style
+======================*/
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.post{
+  width: 1000px;
+  margin: 0 auto;
+  display: grid;
+img{
+max-width: 100%;
+height: auto;
+vertical-align: bottom;
+}
+}
