@@ -58,5 +58,4 @@ gulp.task("browserSyncTask", function() {
 });
 
 // sassのタスクとbrowserSyncTaskを同時に実行する
-<<<<<<< HEAD
 gulp.task("default", gulp.parallel("sass", "browserSyncTask"));
