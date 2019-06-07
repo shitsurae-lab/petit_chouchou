@@ -11,11 +11,10 @@ const browserSync = require("browser-sync");
 
 
 // style.scssの監視タスクを作成する
-gulp.task("default", function() {
+gulp.task("sass", function() {
   // ★ style.scssファイルを監視
   return gulp.watch("css/style.scss", function() {
     // style.scssの更新があった場合の処理
-
     // style.scssファイルを取得
     return (
       gulp
@@ -41,12 +40,7 @@ gulp.task("default", function() {
         .pipe(gulp.dest("css"))
     );
   });
-
-
 });
-
-
-
 // タスクの設定
 gulp.task("browserSyncTask", function() {
   browserSync({
@@ -56,7 +50,12 @@ gulp.task("browserSyncTask", function() {
   });
 
   // srcフォルダ以下のファイルを監視
-  gulp.watch("./**", function() {
+  gulp.watch("./**", function(cb) {
     browserSync.reload(); // ファイルに変更があれば同期しているブラウザをリロード
+    // browserSyncのreload()が終わったことを通知する
+    cb();
   });
 });
+
+// sassのタスクとbrowserSyncTaskを同時に実行する
+gulp.task("default", gulp.parallel("sass", "browserSyncTask"));
