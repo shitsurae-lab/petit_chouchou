@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sanitize.css/2.0.0/sanitize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Noto+Sans+JP&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Petit Chou Chou</title>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animationDelay.js"></script>
+</head>
+<body>
+  <header id="header" class="c-header" role="banner" itemscope="itemscope">
+    <div class="c-header__logo">
+      <a href="index.html"><img src="images/petit-chouchou_logo.jpg" srcset="images/petit-chouchou_logo.jpg 1x, images/petit-chouchou_logo@2x.jpg 2x" alt="オーガニックアロマセラピーサロン プティシュシュ"></a>
+    </div>
+    <nav class="c-header__nav">
+      <ul class="c-gnavi">
+        <a href="404.html" class="link--none c-gnavi__navItem">
+          <li class="">コース</li>
+        </a>
+        <a href="flow.html" class="link--none  c-gnavi__navItem">
+          <li class="">施術の流れ</li>
+        </a>
+        <a href="404.html" class="link--none  c-gnavi__navItem">
+          <li class="">ご案内</li>
+        </a>
+        <a href="404.html" class="link--none  c-gnavi__navItem">
+          <li class="">お問い合わせ</li>
+        </a>
+      </ul>
+    </nav>
+  </header>
+  <!-- 404ページ: mainVisualはなし -->
+  <section class="p-mainContent--404">
+    <article class="p-breadCrumb">
+      <p class="c-bread">> 404page</p>
+    </article>
+    <article>
+      <section class="p-underConstruct">
+        <div class="p-underConstruct__video mb-40">
+          <video src="video/sail_ride.mp4" width="1280px" height="auto" class="p-underConstruct__videoInner" muted autoplay loop></video>
+          <h2 class="p-underConstruct__video__heading">
+お探しのページは見つかりません。
+          </h2>
+        </div>
+        <div class="p-underConstruct__notice">
+          <h3 class="mb24">404 File not found.</h3>
+          <p>お探しのページは一時的にアクセスができない状況にあるか、移動もしくは削除された可能性があります。</p>
+        </div>
+      </section>
+
+    </article>
+
+
+  </section>
+  <script type="text/javascript">
+    document.getElementById("view_today").innerHTML = getNow();
+
+    function getNow() {
+      const now = new Date();
+      const year = now.getFullYear();
+      const mon = now.getMonth() + 1; //１を足すこと
+      const day = now.getDate();
+      const hour = now.getHours();
+
+      //出力用
+      const s = year + "年" + mon + "月" + day + "日";
+      return s;
+
+    }
+
+  </script>
+</body>
+</html>

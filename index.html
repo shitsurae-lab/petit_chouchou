@@ -9,35 +9,65 @@
   <link href="https://fonts.googleapis.com/css?family=Lato|Noto+Sans+JP&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <title>Petit Chou Chou</title>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animationDelay.js"></script>
 </head>
 <body>
-  <article class="post">
-    <h1 class="post-title">
+  <header id="header" class="c-header" role="banner" itemscope="itemscope">
+    <div class="c-header__logo">
+      <a href="index.html"><img src="images/petit-chouchou_logo.jpg" srcset="images/petit-chouchou_logo.jpg 1x, images/petit-chouchou_logo@2x.jpg 2x" alt="オーガニックアロマセラピーサロン プティシュシュ"></a>
+    </div>
+    <nav class="c-header__nav">
+      <ul class="c-gnavi">
+        <a href="menu.html" class="link--none c-gnavi__navItem">
+          <li class="">コース</li>
+        </a>
+        <a href="flow.html" class="link--none  c-gnavi__navItem">
+          <li class="">施術の流れ</li>
+        </a>
+        <a href="404.html" class="link--none  c-gnavi__navItem">
+          <li class="">ご案内</li>
+        </a>
+        <a href="contact.html" class="link--none  c-gnavi__navItem">
+          <li class="">お問い合わせ</li>
+        </a>
+      </ul>
+    </nav>
+  </header>
+  <article class="slideshow">
+    <img src="images/main_slide-01.jpg" srcset="images/main_slide-01@2x.jpg, images/main_slide-01.jpg 1x" alt="petit ChouChou アロマオイルイメージ">
+    <img src="images/main_slide-02.jpg" srcset="images/main_slide-02@2x.jpg, images/main_slide-02.jpg 1x" alt="petit ChouChou ハンドマッサージイメージ">
+    <img src="images/main_slide-03.jpg" srcset="images/main_slide-03@2x.jpg, images/main_slide-03.jpg 1x" alt="petit ChouChou ラベンダーイメージ">
+  </article>
+  <!-- //END .slideshow -->
+  <article class="post animation">
+    <h2 class="post-title">
   <span class="post-title__name">Petit Chou Chou</span>へようこそ!
-  </h1>
+  </h2>
     <p class="post-sub">"Welcome Petit Chou Chou!"</p>
-    <time id="view_today" class="post-date"></time>
-    <p class="post-lead">
+    <!-- <time id="view_today" class="post-date"></time> -->
+    <p class="post-lead left delay">
       思いっきり癒やされたい!そんなとき"Petit Chou Chou"の香りと手技が貴方のこころとからだをゆっくりほぐします
     </p>
-    <figure class="post-figure01">
-      <img src="images/photoshop/design-comp-assets/main_pc.jpg" srcset="images/photoshop/design-comp-assets/main_pc.jpg 1x, images/photoshop/design-comp-assets/main_pc@2x.jpg 2x" alt="Petit Chou chouのWelcome Image">
+    <figure class="post-figure01 anm_mod right delay">
+      <img src="images/main_pc.jpg" srcset="images/main_pc.jpg 1x, images/main_pc@2x.jpg 2x" alt="Petit Chou chouのWelcome Image">
     </figure>
     <p class="post-catch">
       お客様の状態に合わせたアロマオイルをブレンドします。
     </p>
-    <p class="post-content01">
-      私わたくしはその人を常に先生と呼んでいた。だからここでもただ先生と書くだけで本名は打ち明けない。これは世間を憚はばかる遠慮というよりも、その方が私にとって自然だからである。私はその人の記憶を呼び起すごとに、すぐ「先生」といいたくなる。筆を執っても心持は同じ事である
+    <p class="post-content01 anm_mod left delay">
+      私はその人を常に先生と呼んでいた。だからここでもただ先生と書くだけで本名は打ち明けない。これは世間を憚はばかる遠慮というよりも、その方が私にとって自然だからである。私はその人の記憶を呼び起すごとに、すぐ「先生」といいたくなる。筆を執っても心持は同じ事である
     </p>
 
-    <figure class="post-figure02">
-      <img src="images/photoshop/design-comp-assets/sub_pc.jpg" srcset="images/photoshop/design-comp-assets/sub_pc.jpg 1x, images/photoshop/design-comp-assets/sub_pc@2x.jpg 2x" alt="Petit Chou chouのWelcome Image">
+    <figure class="post-figure02 anm_mod left delay">
+      <img src="images/sub_pc.jpg" srcset="images/sub_pc.jpg 1x, images/sub_pc@2x.jpg 2x" alt="Petit Chou chouのWelcome Image">
       <figcaption>
         優しい光とリラックスした音楽でお客様をお迎え致します
       </figcaption>
     </figure>
 
-    <div class="post-content02">
+    <div class="post-content02 anm_mod right delay">
       <p>
         筆を執っても心持は同じ事である。よそよそしい頭文字などはとても使う気にならない。
         私が先生と知り合いになったのは鎌倉である。その時私はまだ若々しい書生であった。
@@ -47,15 +77,17 @@
       </p>
       <p>彼は現代の習慣からいうと結婚するにはあまり年が若過ぎた。それに肝心かんじんの当人が気に入らなかった。それで夏休みに当然帰るべきところを、わざと避けて東京の近くで遊んでいたのである。彼は電報を私に見せてどうしようと相談をした。私にはどうしていいか分らなかった。けれども実際彼の母が病気であるとすれば彼は固もとより帰るべきはずであった。それで彼はとうとう帰る事になった</p>
     </div>
-    <aside class="post-sns">
+    <!-- <aside class="post-sns">
       <ul>
         <li>
           <a href="#"><i class="fab fa-facebook-f"></i></a></li>
         <li><a href="#"><span class="fa"></span></a></li>
         <li><a href="#"><span class="fa"></span></a></li>
       </ul>
-    </aside>
+    </aside> -->
   </article>
+
+
   <script type="text/javascript">
     document.getElementById("view_today").innerHTML = getNow();
 
