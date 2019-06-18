@@ -12,6 +12,8 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="js/main.js"></script>
   <script src="js/animationDelay.js"></script>
+  <script src="https://sdk.form.run/js/v2/formrun.js"></script>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
   <header id="header" class="c-header" role="banner" itemscope="itemscope">
@@ -29,7 +31,7 @@
     <!-- END .c-header__logo -->
     <nav class="c-header__nav">
       <ul class="c-gnavi">
-        <a href="404.html" class="link--none c-gnavi__navItem">
+        <a href="menu.html" class="link--none c-gnavi__navItem">
           <li class="">コース</li>
         </a>
         <a href="flow.html" class="link--none  c-gnavi__navItem">
@@ -44,29 +46,55 @@
       </ul>
     </nav>
   </header>
-  <!-- 404ページ: mainVisualはなし -->
+  <!-- Contactページ: mainVisualはなし -->
+
+  <article class="p-mainVisual">
+    <img src="images/main_slide-01.jpg" srcset="images/main_slide-01@2x.jpg, images/main_slide-01.jpg 1x" alt="petit ChouChou ラベンダーイメージ">
+  </article>
   <section class="l-wrapper mb-80">
-    <article class="p-breadCrumb">
-      <p class="c-bread">> 404page</p>
+    <article class="p-breadCrumb mb-40">
+      <p class="c-bread">> Thanks page</p>
     </article>
-    <article>
-      <section class="p-underConstruct">
-        <div class="p-underConstruct__video mb-40">
-          <video src="video/sail_ride.mp4" width="1280px" height="auto" class="p-underConstruct__videoInner" muted autoplay loop></video>
-          <h2 class="p-underConstruct__video__heading">
-お探しのページは見つかりません。
-          </h2>
-        </div>
-        <div class="p-underConstruct__notice">
-          <h3 class="mb24">404 File not found.</h3>
-          <p>お探しのページは一時的にアクセスができない状況にあるか、移動もしくは削除された可能性があります。</p>
-        </div>
-      </section>
-
-    </article>
-
-
+    <h2 class="p-thanks__heading mb-24">お問い合わせありがとうございます。</h2>
+    <section class="p-mainContent--thanks">
+      <div class="p-mainContent--thanksInner">
+        <article class="p-mainContent--thanksNotes mb-40">
+          <h3 class="mb-24">Thank you for inquiry!!</h3>
+          <ul>
+            <li>お問い合わせフォームの内容を確認後、概ね2〜3営業日以内に折返し担当者からご連絡致します。送信後、5日間以上経っても当サロンからの返信が届かない場合は恐れ入りますが再度ご連絡ください。</li>
+            <li>お問い合わせ頂いた内容によってはご返信できかねる場合もございます。また営業の方からご連絡にはご対応しておりませんのでご了承ください</li>
+            <li><a href="index.html" class="link--none">トップページ</a>へ戻る</li>
+          </ul>
+        </article>
+      </div>
+      <!-- //END .p-thanks__inner -->
+    </section>
   </section>
+  <footer class="p-footer">
+    <div class="sp__nav--wrap">
+      <div class="sp__nav--logo"><a href="index.html" class="logo"><img src="images/petit-chouchou__headingLogo.jpg" alt="Petit Chou Chou(プティシュシュ)"></a></div>
+      <ul class="sp__nav--list">
+        <li>
+          <a href="index.html" class="link--none">トップページ</a>
+        </li>
+        <li>
+          <a href="menu.html" class="link--none">コース</a>
+        </li>
+        <li>
+          <a href="flow.html" class="link--none">施術の流れ</a>
+        </li>
+        <li>
+          <a href="404.html" class="link--none">ご案内</a>
+        </li>
+        <li>
+          <a href="contact.html" class="link--none">お問い合わせ</a>
+        </li>
+      </ul>
+    </div>
+    <div class="p-footer__btn">
+      <small class="p-footer__copyright">@2019 Petit Chou Chou</small>
+    </div>
+  </footer>
   <script type="text/javascript">
     document.getElementById("view_today").innerHTML = getNow();
 
