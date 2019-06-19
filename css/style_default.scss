@@ -86,19 +86,20 @@ input[type=checkbox], input[type=radio] {
 
 //Start: media query=======>
 
-$mq-breakpoints: (
-  'xs': 320px,
-  'sm' : 600px,
-  'md': 768px,
-  'lg' : 992px,
-  'xl': 1200px,
-);
+$breakpoints: (
+  'sm': 'screen and (min-width: 375px)',
+  'md': 'screen and (min-width: 768px)',
+  'lg': 'screen and (min-width: 992px)',
+  'xl': 'screen and (min-width: 1200px)',
+) !default;
 
-@mixin mq($breakpoint: medium) {
-  @media screen and (min-width: #{map-get($mq-breakpoints, $breakpoint)}) {
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
     @content;
   }
 }
+
 
 //END: media query=======>
 
@@ -120,18 +121,20 @@ $mq-breakpoints: (
   /* +++++++++++++++++++++++++
   * Component
   ++++++++++++++++++++++++++ */
-  .c-header{
-    width: 100%;
-    height: auto;
-    padding: 8px 0;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
 
-     @include mq(md) {
-    max-width: 100%;
+  .c-header{
+    max-width: 1280px;
+    width: 100%;
+    height: auto;
+    padding: 8px 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    @include mq(){
+         max-width: 1280px;
     width: 100%;
     height: auto;
     padding: 8px 0;
@@ -139,10 +142,176 @@ $mq-breakpoints: (
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: row;
     }
 
-    @include mq(xl) {
+    &__logo{
+      width: 90%;
+      margin:  0 auto;
+      height: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @include mq(){
+
+      }
+      & > a{
+        text-decoration: none;
+      }
+
+      &Inner{
+        display: flex;
+        flex-direction: row;
+
+      }
+      &--symbol{
+width: 20%;
+      }
+
+      &--headline{
+width: 76%;
+        font-size: 1.5rem;
+        font-family: 'Lato Light',Helvetica,Arial,sans-serif;
+        font-weight: 300;
+        position: relative;
+      }
+    }
+    &__nav{
+      transform: translateX(-100%);
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 16px;
+      transition: ease .5s;
+      z-index: 1000;
+      // START: sp menu のみの記述
+      position: absolute;
+      margin-top: 56px;
+      background: #fff;
+    }
+
+    &__nav.open{
+      transform: translateX(0);
+      overflow-y: auto;
+    }
+  }
+.c-navbar__toggle{
+  z-index: 9999;
+  &--icon{
+    position: relative;
+    display: block;
+    height: 2px;
+    width: 30px;
+    background: #5c6b80;
+    transition: ease .5s;
+
+    &:nth-child(1){
+      top: 0;
+    }
+    &:nth-child(2){
+      margin: 8px 0;
+    }
+
+    &:nth-child(3){
+      bottom: 0;
+    }
+  }
+}
+
+.c-navbar__toggle.open{
+
+   .c-navbar__toggle--icon{
+
+    &:nth-child(1){
+      top: 10px;
+      transform: rotate(45deg);
+    }
+    &:nth-child(2){
+      transform: translateY(-50%);
+      opacity: 0;
+    }
+
+    &:nth-child(3){
+      top: -10px;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+  .c-gnavi{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: 14px;
+
+    &__navItem{
+      position: relative;
+      padding: 24px 0 4px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #d3d1ca;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      &::after{
+        position: absolute;
+        content: "";
+        bottom: 0;
+        border-bottom: solid 1px #555555;
+        transition: all .3s ease;
+        width: 0;
+      }
+
+      &:hover::after{
+        width: 100%;
+      }
+
+      &:first-child:before{
+      position: absolute;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f4d8";
+      top: 0;
+          left: 50%;
+    transform: translateX(-50%);
+      }
+    &:nth-child(2):before{
+      position: absolute;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f1bb";
+      top: 0;
+          left: 50%;
+    transform: translateX(-50%);
+      }
+
+      &:nth-child(3):before{
+      position: absolute;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f328";
+      top: 0;
+          left: 50%;
+    transform: translateX(-50%);
+      }
+
+      &:last-child:before{
+      position: absolute;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f06c";
+      top: 0;
+          left: 50%;
+    transform: translateX(-50%);
+      }
+    }
+
+  }
+
+
+  @include mq{
+  .c-header{
     max-width: 1280px;
     width: 100%;
     height: auto;
@@ -151,24 +320,14 @@ $mq-breakpoints: (
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: row;
-    }
-    &__logo{
-      width: 96%;
-      margin: 0 auto;
-      height: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
 
-      @include mq(md){
+    &__logo{
       width: 36%;
-      margin: auto;
       height: auto;
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      }
+
       & > a{
         width: 100%;
         text-decoration: none;
@@ -192,119 +351,54 @@ width: 76%;
       }
     }
     &__nav{
-      width: 100%;
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      padding: 16px;
-      transform: translateX(-100%);
-      transition: ease .5s;
-      @include mq(md){
       width: 50%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       padding: 16px;
-      transform: translateX(0);
-      transition: ease;
-      }
-    }
-
-    &__nav.open{
-display: flex;
-      flex-direction: column;
-      justify-content: center;
-      transform: translateX(0);
-      overflow-y: auto;
-    z-index: 9999;
-    background: rgba(255, 255, 255, 0.8);
-    height: 80vh;
-    position: absolute;
-    top: 60px;
-    @include mq(md){
-        transform: translateX(0);
-      overflow-y: auto;
-    z-index: 9999;
-    background: rgba(255, 255, 255, 0.8);
-    height: 80vh;
-    position: static;
-    top: 0;
-    }
     }
   }
-.c-navbar__toggle{
-  z-index: 9999;
-  @include mq(md){
-display: none;
-  }
-  &--icon{
-  position: relative;
- display: block;
- height: 2px;
- width: 30px;
- background: #5c6b80;
- -webkit-transition: ease .5s;
- transition: ease .5s;
-  }
-}
 
-.c-navbar__toggle--icon{
-  &:nth-child(1){
- top: 0;
-  }
-  &:nth-child(2){
- margin:8px 0;
-  }
-  &:nth-child(3){
- bottom: 0;
-  }
-}
+  .c-navbar__toggle--icon{
+    position: relative;
+    display: none;
+    height: 2px;
+    width: 30px;
+    background: #5c6b80;
+    -webkit-transition: ease .5s;
+    transition: ease .5s;
 
-.c-navbar__toggle.open .c-navbar__toggle--icon{
-  &:nth-child(1){
- top: 10px;
- transform: rotate(45deg);
+    &:nth-child(1){
+      top: 0;
+    }
+    &:nth-child(2){
+      margin: 8px 0;
+    }
+
+    &:nth-child(3){
+      bottom: 0;
+    }
   }
-  &:nth-child(2){
- transform: translateY(-50%);
- opacity: 0;
-  }
-  &:nth-child(3){
- top: -10px;
- transform: rotate(-45deg);
-  }
-}
+
   .c-gnavi{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    font-size: 14px;
-    @include mq(md){
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     font-size: 14px;
-    }
+
     &__navItem{
-      position: relative;
-    padding: 24px 0;
-    margin-bottom: 8px;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      @include mq(md){
       position: relative;
       padding: 24px 0 4px;
       width: 14%;
       display: flex;
       justify-content: center;
-      }
+
       &::after{
         position: absolute;
         content: "";
         bottom: 0;
-        border-bottom: solid 1px #aaa4a1;
-        transition: all .3s ease-in-out;
+        border-bottom: solid 1px #555555;
+        transition: all .3s ease;
         width: 0;
       }
 
@@ -313,89 +407,182 @@ display: none;
       }
 
       &:first-child:before{
-        position: absolute;
-      font-family: "Font Awesome 5 Free";
-      font-weight: 900;
-      content: "\f4d8";
-      top: 0;
-      left: 50%;
-        @include mq(md){
       position: absolute;
       font-family: "Font Awesome 5 Free";
       font-weight: 900;
       content: "\f4d8";
       top: 0;
       left: 32px;
-        }
       }
     &:nth-child(2):before{
-       position: absolute;
-      font-family: "Font Awesome 5 Free";
-      font-weight: 900;
-      content: "\f1bb";
-      top: 0;
-      left: 50%;
-      @include mq(md){
       position: absolute;
       font-family: "Font Awesome 5 Free";
       font-weight: 900;
       content: "\f1bb";
       top: 0;
       left: 30px;
-      }
       }
 
       &:nth-child(3):before{
-        position: absolute;
-      font-family: "Font Awesome 5 Free";
-      font-weight: 900;
-      content: "\f328";
-      top: 0;
-      left: 50%;
-        @include mq(md){
       position: absolute;
       font-family: "Font Awesome 5 Free";
       font-weight: 900;
       content: "\f328";
       top: 0;
       left: 32px;
-        }
       }
 
       &:last-child:before{
-        position: absolute;
-      font-family: "Font Awesome 5 Free";
-      font-weight: 900;
-      content: "\f06c";
-      top: 0;
-      left: 50%;
-        @include mq(md){
       position: absolute;
       font-family: "Font Awesome 5 Free";
       font-weight: 900;
       content: "\f06c";
       top: 0;
       left: 30px;
-        }
       }
     }
 
   }
-  // ------ Start: index.html ---------->>
-  .post{
-    width: 98%;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(16, 160px);
-    column-gap: 0px;
-    padding: 0;
-    // font-family: 'Noto Sans JP', 'Noto Sans JP Light', sans-serif;
-    // font-weight: 300;
-    font-size: 16px;
-    @include mq(md) {
-    max-width: 960px;
+}
+
+  @include mq-md{
+  .c-header{
+    max-width: 1280px;
     width: 100%;
+    height: auto;
+    padding: 8px 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo{
+      width: 36%;
+      height: auto;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      & > a{
+        width: 100%;
+        text-decoration: none;
+      }
+
+      &Inner{
+        display: flex;
+        flex-direction: row;
+
+      }
+      &--symbol{
+width: 20%;
+      }
+
+      &--headline{
+width: 76%;
+        font-size: 1.5rem;
+        font-family: 'Lato Light',Helvetica,Arial,sans-serif;
+        font-weight: 300;
+        position: relative;
+      }
+    }
+    &__nav{
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 16px;
+    }
+  }
+
+  .c-navbar__toggle--icon{
+    position: relative;
+    display: none;
+    height: 2px;
+    width: 30px;
+    background: #5c6b80;
+    -webkit-transition: ease .5s;
+    transition: ease .5s;
+
+    &:nth-child(1){
+      top: 0;
+    }
+    &:nth-child(2){
+      margin: 8px 0;
+    }
+
+    &:nth-child(3){
+      bottom: 0;
+    }
+  }
+
+  .c-gnavi{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 14px;
+
+    &__navItem{
+      position: relative;
+      padding: 24px 0 4px;
+      width: 14%;
+      display: flex;
+      justify-content: center;
+
+      &::after{
+        position: absolute;
+        content: "";
+        bottom: 0;
+        border-bottom: solid 1px #555555;
+        transition: all .3s ease;
+        width: 0;
+      }
+
+      &:hover::after{
+        width: 100%;
+      }
+
+      &:first-child:before{
+      position: absolute;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f4d8";
+      top: 0;
+      left: 32px;
+      }
+    &:nth-child(2):before{
+      position: absolute;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f1bb";
+      top: 0;
+      left: 30px;
+      }
+
+      &:nth-child(3):before{
+      position: absolute;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f328";
+      top: 0;
+      left: 32px;
+      }
+
+      &:last-child:before{
+      position: absolute;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f06c";
+      top: 0;
+      left: 30px;
+      }
+    }
+
+  }
+}
+  // ------ Start: index.html ---------->>
+  @include mq-md{
+  .post{
+    width: 960px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -405,17 +592,7 @@ display: none;
     // font-family: 'Noto Sans JP', 'Noto Sans JP Light', sans-serif;
     // font-weight: 300;
     font-size: 16px;
-    }
     &-title{ //タイトル
-      grid-column: 1 / -1;
-  grid-row: 1 ;
-  font-size: 1.5rem;
-  line-height: 2;
-  align-self: center;
-  z-index: 10;
-  font-family: 'Noto Sans JP', 'Noto Sans JP Light', sans-serif;
-    font-weight: 300;
-      @include mq(md) {
   grid-column: 1 / 5;
   grid-row: 1 / 3;
   font-size: 2.8125em;
@@ -424,7 +601,6 @@ display: none;
   z-index: 10;
   font-family: 'Noto Sans JP', 'Noto Sans JP Light', sans-serif;
     font-weight: 300;
-      }
   &__name{
     font-family: 'Lato','Lato Light', sans-serif;
   }
@@ -434,20 +610,10 @@ display: none;
       grid-row: 2;
       color: #ddd;
       font-family: "Lato",sans-serif;
-      font-size: 2rem;
-      font-weight: 400;
-      letter-spacing: 0.14em;
-      line-height: 1;
-      @include mq(md) {
-      grid-column: 1 / -1;
-      grid-row: 2;
-      color: #ddd;
-      font-family: "Lato",sans-serif;
       font-size: 2.5rem;
       font-weight: 400;
       letter-spacing: 0.14em;
       line-height: 1;
-      }
     }
     &-date{
       grid-column: 5;
@@ -457,36 +623,16 @@ display: none;
       justify-self: end;
     }
     &-lead{
-grid-column: 1 / -1;
-      grid-row: 3 ;
-      font-size: 1rem;
-      font-weight: 300;
-      line-height: 2;
-
-
-      @include mq(md){
       grid-column: 1 / 3;
       grid-row: 3 / 5;
       font-size: 1.25em;
       font-weight: 300;
       line-height: 2;
-      }
     }
     &-figure01{
-      grid-column: 1 / -1;
-      grid-row: 4 / 6;
-      margin-right: 0;
-
-      @include mq(md){
-      grid-column: 3 / 6;
-      grid-row: 3 / 6;
-      margin-right: 0;
-    }
-    @include mq(lg){
       grid-column: 3 / 6;
       grid-row: 3 / 6;
       margin-right: -30px;
-    }
       img{
         height: 100%;
         object-fit: cover;
@@ -494,20 +640,6 @@ grid-column: 1 / -1;
     }
 
     &-catch{
-    grid-column: 1 / -1;
-    grid-row: 8 / 9;
-    font-size: 1.2rem;
-    line-height: 1.5;
-    justify-self: start;
-    align-self: center;
-    text-align: center;
-    margin-left: 30px;
-    line-height: 2;
-    z-index: 10;
-    font-family: 'Noto Sans JP', 'Noto Sans JP Light', sans-serif;
-    font-weight: 300;
-
-    @include mq(md){
     grid-column: 1 / 6;
     grid-row: 6 /8;
     font-size: 2rem;
@@ -520,18 +652,8 @@ grid-column: 1 / -1;
     z-index: 10;
     font-family: 'Noto Sans JP', 'Noto Sans JP Light', sans-serif;
     font-weight: 300;
-      }
+
     &__sub{
-       grid-column: 1 / -1;
-    grid-row: 9;
-    font-size: 2rem;
-    color: #ddd;
-    font-family: "Lato",sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.14em;
-    line-height: 1;
-    margin: 8px 0 0 40px;
-    @include mq(md){
     grid-column: 1 / 6;
     grid-row: 7;
     font-size: 2rem;
@@ -541,33 +663,19 @@ grid-column: 1 / -1;
     letter-spacing: 0.14em;
     line-height: 1;
     margin: 8px 0 0 40px;
-      }
     }
     }
     &-content01{
-      grid-column: 1 / -1;
-      grid-row: 6 / 8;
-      font-size: 1em;
-      line-height: 2;
-      text-align: justify;
-      text-justify: inter-ideograph;
-
-      @include mq(md){
       grid-column: 1 / 3;
       grid-row: 4 / 6;
       font-size: 1em;
       line-height: 2;
       text-align: justify;
-      text-justify: inter-ideograph;
-      }
+      text-justify: inter-ideograph
     }
     &-figure02{
-       grid-column: 1 / -1;
-      grid-row: 10 / 13;
-      @include mq(md){
       grid-column: 1 / 3;
       grid-row: 8 / 11;
-      }
     figcaption{
       font-size: 0.9375em;
       font-weight: 500;
@@ -575,21 +683,12 @@ grid-column: 1 / -1;
     }
     }
     &-content02{
-      grid-column: 1 / -1;
-      grid-row: 13 / 17;
-      font-size: 1em;
-      line-height: 2;
-      text-align: justify;
-      text-justify: inter-ideograph;
-
-      @include mq(md){
       grid-column: 3 / 6;
       grid-row: 8 / 11;
       font-size: 1em;
       line-height: 2;
       text-align: justify;
-      text-justify: inter-ideograph;
-      }
+      text-justify: inter-ideograph
     }
     &-sns{
       grid-column: 5;
@@ -601,7 +700,7 @@ grid-column: 1 / -1;
   vertical-align: bottom;
   }
   }
-
+  }
   // ------ END: index.html ---------->>
 
   .c-bread{
@@ -635,7 +734,7 @@ grid-column: 1 / -1;
   }
 
   // ------ Start: menu.html ---------->>
-
+  @include mq-md{
   .p-mainContent--menu{
     max-width: 1280px;
     width: 100%;
@@ -993,12 +1092,12 @@ grid-column: 1 / -1;
 
   }
   // END .p-menu
-
+  }
   // ------ END: menu.html ---------->>
 
 
   // ------ Start: flow.html ---------->>
-
+  @include mq-md{
   .p-mainContent{
     width: 960px;
     margin: 0 auto;
@@ -1008,30 +1107,6 @@ grid-column: 1 / -1;
   width: 100%;
   padding: 0 30px;
   margin: 0 auto 24px;
-
-  &--parent{
-    display: flex;
-    flex-direction: row;
-  }
-
-  &--item:nth-child(2){
-    position: relative;
-    padding-left: 40px;
-    &::before{
-    content: ">";
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: scale(0.9) translateY(-50%);
-    background: #EAE9E6;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    line-height: 1.5;
-    padding-left: 6px;
-    color: #544842;
-    }
-  }
   }
 
   .p-flow{
@@ -1172,10 +1247,11 @@ grid-column: 1 / -1;
       }
     }
   }
-
+  }
   // ------ END: flow.html ---------->>
 
   // ------ Start: 404.html ---------->>
+  @include mq-md{
 
   .p-underConstruct{
     width: 1280px;
@@ -1259,10 +1335,11 @@ grid-column: 1 / -1;
     }
   }
   }
-
+  }
   // ------ END: 404.html ---------->>
 
    // ------ Start: contact.html ---------->>
+  @include mq-md{
   .p-contactForm__heading{
 text-align: center;
 font-family: 'Noto Sans JP Light','Noto Sans JP','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ','ＭＳ Ｐゴシック','MS PGothic',sans-serif;
@@ -1272,7 +1349,7 @@ position: relative;
 padding-top: 48px;
 
 &::before{
-  content: url(../images/petit-chouchou_heading-logo.jpg);
+  content: url(../images/petit-chouchou__headingLogo.jpg);
   position: absolute;
   width: 60px;
   height: 48px;
@@ -1347,11 +1424,11 @@ font-family: 'Noto Sans JP Light','Noto Sans JP','Hiragino Kaku Gothic ProN','�
     }
   }
   }
-
+  }
   // ------ END: contact.html ---------->>
 
      // ------ Start: thanks.html ---------->>
-
+  @include mq-md{
   .p-thanks__heading{
 text-align: center;
 font-family: 'Noto Sans JP Light','Noto Sans JP','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ','ＭＳ Ｐゴシック','MS PGothic',sans-serif;
@@ -1361,7 +1438,7 @@ position: relative;
 padding-top: 48px;
 
 &::before{
-  content: url(../images/petit-chouchou_heading-logo.jpg);
+  content: url(../images/petit-chouchou__headingLogo.jpg);
   position: absolute;
   width: 60px;
   height: 48px;
@@ -1412,11 +1489,11 @@ transform: translate(-50%, -50%);
 
 
   }
-
+  }
   // ------ END: thanks.html ---------->>
 
      // ------ Start: personal.html ---------->>
-
+  @include mq-md{
   .p-personal__heading{
 text-align: center;
 font-family: 'Noto Sans JP Light','Noto Sans JP','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ','ＭＳ Ｐゴシック','MS PGothic',sans-serif;
@@ -1426,7 +1503,7 @@ position: relative;
 padding-top: 48px;
 
 &::before{
-  content: url(../images/petit-chouchou_heading-logo.jpg);
+  content: url(../images/petit-chouchou__headingLogo.jpg);
   position: absolute;
   width: 60px;
   height: 48px;
@@ -1495,7 +1572,7 @@ font-family: 'Noto Sans JP Light','Noto Sans JP','Hiragino Kaku Gothic ProN','�
   }
 
   }
-
+  }
   // ------ END: personal.html ---------->>
 
    // ------ START: footer ---------->>
@@ -1512,9 +1589,6 @@ font-family: 'Noto Sans JP Light','Noto Sans JP','Hiragino Kaku Gothic ProN','�
 }
 .sp__nav--wrap{
   display: block;
-  @include mq(lg){
-    display: none;
-  }
 }
 .sp__nav{
   &--logo{
@@ -1534,54 +1608,89 @@ font-family: 'Noto Sans JP Light','Noto Sans JP','Hiragino Kaku Gothic ProN','�
     }
   }
 }
+      @include mq{
+  .p-footer .p-footer__btn {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #a39d8c;
+    padding: 24px 0;
+    color: #fff;
+}
+.p-footer__btn{
+  text-align: center;
+}
+.sp__nav--wrap{
+  display: none;
+}
+.sp__nav{
+  &--logo{
+    display: flex;
+    justify-content: center;
+  }
+  &--list{
+    & li{
+    font-size: 12px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
 
+    &:nth-child(odd){
+      background: #eaeaea;
+    }
+    }
+  }
+}
+}
+   @include mq-md{
+  .p-footer .p-footer__btn {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #a39d8c;
+    padding: 24px 0;
+    color: #fff;
+}
+.p-footer__btn{
+  text-align: center;
+}
 
+.sp__nav--wrap{
+  display: none;
+}
+
+.sp__nav{
+  &--logo{
+    display: flex;
+    justify-content: center;
+  }
+  &--list{
+    & li{
+    font-size: 12px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+
+    &:nth-child(odd){
+      background: #eaeaea;
+    }
+    }
+  }
+}
+}
   // ------ END: footer ---------->>
 
   .slideshow{
-      width: 100%;
-      position: relative;
-      height: 580px;
-      margin: 0 auto 40px;
-@include mq(md){
-  max-width: 1280px;
-    width: 100%;
-    position: relative;
     overflow: hidden;
+    position: relative;
+    max-width: 1280px;
   height: 400px;
     margin: 0 auto 40px;
-  }
-  }
-    .slideshow.open{
-      width: 100%;
-      position: relative;
-      height: 580px;
-      margin: 0 auto 40px;
-@include mq(md){
-  max-width: 1280px;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-  height: 400px;
-    margin: 0 auto 40px;
-  }
   }
 
   .slideshow img{
     position: absolute;
-    top: 0;
-    transform: transformY(0);
     display: none;
-    height: 580px;
-    object-fit: cover;
-    @include mq(md){
-    position: absolute;
-    top: 0;
-    transform: transformY(0);
-    display: none;
-    height: 400px;
-    object-fit: cover;
-    }
     // left: 50%;
     // margin-left: -500px;
   }
@@ -1591,20 +1700,7 @@ font-family: 'Noto Sans JP Light','Noto Sans JP','Hiragino Kaku Gothic ProN','�
   .anm_mod {
     opacity: 0;
     transform: translate3d(0, 100%, 0);
-    transition: all .6s ease;
-
-  &.left {
-   transform: translate3d(-100%, 0, 0);
-  }
-  &.right {
-   transform: translate3d(100%, 0, 0);
-  }
-  &.delay {
-   transition: all 2s ease;
-  }
-  &.fast {
-   transition: all 0.8 ease;
-  }
+    transition: all 1s ease;
   }
 
   .anm_mod.active {

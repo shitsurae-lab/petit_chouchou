@@ -12,22 +12,30 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="js/main.js"></script>
   <script src="js/animationDelay.js"></script>
+  <script src="js/drawer.js"></script>
 </head>
 <body>
   <header id="header" class="c-header" role="banner" itemscope="itemscope">
     <div class="c-header__logo">
       <a href="index.html" class="c-header__logoInner">
         <div class="c-header__logo--symbol">
-          <img src="images/petit-chouchou_logo.jpg" srcset="images/petit-chouchou_logo.jpg 1x, images/petit-chouchou_logo@2x.jpg 2x" alt="オーガニックアロマセラピーサロン プティシュシュ">
+          <img src="images/petit-chouchou_heading-logo.jpg" srcset="images/petit-chouchou_heading-logo.jpg 1x, images/petit-chouchou_heading-logo@2x.jpg 2x" alt="オーガニックアロマセラピーサロン プティシュシュ">
         </div>
         <!-- END //.c-header__logo--symbol -->
         <h1 class="c-header__logo--headline link--none">
-          Petit Chou Chou
-        </h1>
+            Petit Chou Chou
+          </h1>
       </a>
+      <div class="c-navbar__toggle">
+        <span class="c-navbar__toggle--icon"></span>
+        <span class="c-navbar__toggle--icon"></span>
+        <span class="c-navbar__toggle--icon"></span>
+      </div>
+      <!-- END c-navbar__toggle -->
     </div>
     <!-- END .c-header__logo -->
-    <nav class="c-header__nav">
+
+    <div class="c-header__nav">
       <ul class="c-gnavi">
         <a href="menu.html" class="link--none c-gnavi__navItem">
           <li class="">コース</li>
@@ -42,7 +50,7 @@
           <li class="">お問い合わせ</li>
         </a>
       </ul>
-    </nav>
+    </div>
   </header>
   <article class="slideshow">
     <img src="images/main_slide-01.jpg" srcset="images/main_slide-01@2x.jpg, images/main_slide-01.jpg 1x" alt="petit ChouChou アロマオイルイメージ">
@@ -102,7 +110,7 @@
 
   <footer class="p-footer">
     <div class="sp__nav--wrap">
-      <div class="sp__nav--logo"><a href="index.html" class="logo"><img src="images/petit-chouchou__headingLogo.jpg" alt="Petit Chou Chou(プティシュシュ)"></a></div>
+      <div class="sp__nav--logo"><a href="index.html" class="logo"><img src="images/petit-chouchou_heading-logo.jpg" alt="Petit Chou Chou(プティシュシュ)"></a></div>
       <ul class="sp__nav--list">
         <li>
           <a href="index.html" class="link--none">トップページ</a>
