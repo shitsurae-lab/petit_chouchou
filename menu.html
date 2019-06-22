@@ -15,180 +15,184 @@
   <script src="js/drawer.js"></script>
 </head>
 <body>
-  <header id="header" class="l-header" role="banner" itemscope="itemscope">
-    <div class="c-header__logo">
-      <a href="index.html" class="c-header__logoInner">
-        <div class="c-header__logo--symbol">
-          <img src="images/petit-chouchou_heading-logo.jpg" srcset="images/petit-chouchou_heading-logo.jpg 1x, images/petit-chouchou_heading-logo@2x.jpg 2x" alt="オーガニックアロマセラピーサロン プティシュシュ">
+  <section class="l-wrapper">
+    <header id="header" class="l-header" role="banner" itemscope="itemscope">
+      <div class="l-header__logo">
+        <a href="index.html" class="l-header__logoInner">
+          <div class="l-header__logo--symbol">
+            <img src="images/petit-chouchou_heading-logo.jpg" srcset="images/petit-chouchou_heading-logo.jpg 1x, images/petit-chouchou_heading-logo@2x.jpg 2x" alt="オーガニックアロマセラピーサロン プティシュシュ">
+          </div>
+          <!-- END //.l-header__logo--symbol -->
+          <h1 class="l-header__logo--headline link--none">
+              Petit Chou Chou
+            </h1>
+        </a>
+        <div class="c-navbar__toggle">
+          <span class="c-navbar__toggle--icon"></span>
+          <span class="c-navbar__toggle--icon"></span>
+          <span class="c-navbar__toggle--icon"></span>
         </div>
-        <!-- END //.c-header__logo--symbol -->
-        <h1 class="c-header__logo--headline link--none">
-            Petit Chou Chou
-          </h1>
-      </a>
-      <div class="c-navbar__toggle">
-        <span class="c-navbar__toggle--icon"></span>
-        <span class="c-navbar__toggle--icon"></span>
-        <span class="c-navbar__toggle--icon"></span>
+        <!-- END c-navbar__toggle -->
       </div>
-      <!-- END c-navbar__toggle -->
-    </div>
-    <!-- END .c-header__logo -->
+      <!-- END .l-header__logo -->
 
-    <div class="c-header__nav">
-      <ul class="c-gnavi">
-        <a href="menu.html" class="link--none c-gnavi__navItem">
-          <li class="">コース</li>
-        </a>
-        <a href="flow.html" class="link--none  c-gnavi__navItem">
-          <li class="">施術の流れ</li>
-        </a>
-        <a href="404.html" class="link--none  c-gnavi__navItem">
-          <li class="">ご案内</li>
-        </a>
-        <a href="contact.html" class="link--none  c-gnavi__navItem">
-          <li class="">お問い合わせ</li>
-        </a>
-      </ul>
-    </div>
-  </header>
-  <main class="l-main mb-80">
-    <article class="p-mainVisual">
-      <picture>
-        <source media="(max-width:414px)" src="images/main_slide-mobile01.jpg" srcset="images/main_slide-mobile01.jpg 1x ,images/main_slide-mobile01@2x.jpg 2x 640w" sizes="100vw">
-        <source srcset="images/main_slide-01.jpg 1280w,
-                                images/main_slide-01@2x.jpg 2560w" sizes="(max-width:2560px) 100vw,
-                                  2560px">
-        <img src="images/main_slide-01.jpg" alt="エッセンシャルオイル">
-      </picture>
-      <!-- <img src="images/main_slide-01.jpg" srcset="images/main_slide-01@2x.jpg, images/main_slide-01.jpg 1x" alt="petit ChouChou ラベンダーイメージ"> -->
-    </article>
-    <!-- //END .p-mainVisual -->
-    <article class="p-breadCrumb">
-      <ul class="p-breadCrumb--parent">
-        <li class="p-breadCrumb--item"><a href-"index.html" class="link--none"><i class="fas fa-home"></a></i></li>
-        <li class="p-breadCrumb--item">メニュー</li>
-      </ul>
-    </article>
-    <!-- //END .p-breadCrumb -->
-    <h2 class="p-contactForm__heading mb-24">コースのご案内</h2>
-    <article class="p-mainContent--menu">
-      <section class="p-menu animation">
-        <div class="p-menu__grid--body mb-80">
-          <h3 class="p-menu__heading p-menu__heading--01">
-                  アロマボディトリートメント
-                </h3>
-          <div class="p-menu__subTitle--01">
-            <p class="c-transparent">Body Treatment</p>
-          </div>
-          <div class="p-menu__catch p-menu__catch--01">
-            <p>30種類の精油から体調や気分にあわせて3～4種類をブレンドします</p>
-            <p>深層筋にアプローチすることでトリートメントの後の体の変化をご実感いただけます</>
-          </div>
-          <div class="p-menuListBody--name">
-            <h4>アロマボディトリートメント</h3>
-          </div>
-          <div class="p-menuListBody--time01">
-            <p>60分</p>
-          </div>
-          <div class=" p-menuListBody--price01">
-            <p>8,500円</p>
-          </div>
-          <div class=" p-menuListBody--time02">
-            <p>90分</p>
-          </div>
-          <div class=" p-menuListBody--price02">
-            <p>12,000円</p>
-          </div>
-          <div class=" p-menuListBody--time03">
-            <p>120分</p>
-          </div>
-          <div class=" p-menuListBody--price03">
-            <p>16,000円</p>
-          </div>
-        </div>
-        <!-- END p-menu__wrapper -->
-        <div class="p-menu__grid--facial mb-80">
-          <h3 class="p-menu__heading p-menu__heading--02">
-                  フェイシャル
+      <div class="l-header__nav">
+        <ul class="c-gnavi">
+          <a href="menu.html" class="link--none c-gnavi__navItem">
+            <li class="">コース</li>
+          </a>
+          <a href="flow.html" class="link--none  c-gnavi__navItem">
+            <li class="">施術の流れ</li>
+          </a>
+          <a href="404.html" class="link--none  c-gnavi__navItem">
+            <li class="">ご案内</li>
+          </a>
+          <a href="contact.html" class="link--none  c-gnavi__navItem">
+            <li class="">お問い合わせ</li>
+          </a>
+        </ul>
+      </div>
+      <!-- END .l-header__nav -->
+    </header>
+    <main class="l-main mb-80">
+      <article class="p-mainVisual">
+        <picture>
+          <source media="(max-width:414px)" src="images/main_slide-mobile01.jpg" srcset="images/main_slide-mobile01.jpg 1x ,images/main_slide-mobile01@2x.jpg 2x 640w" sizes="100vw">
+          <source srcset="images/main_slide-01.jpg 1280w,
+                                  images/main_slide-01@2x.jpg 2560w" sizes="(max-width:2560px) 100vw,
+                                    2560px">
+          <img src="images/main_slide-01.jpg" alt="エッセンシャルオイル">
+        </picture>
+        <!-- <img src="images/main_slide-01.jpg" srcset="images/main_slide-01@2x.jpg, images/main_slide-01.jpg 1x" alt="petit ChouChou ラベンダーイメージ"> -->
+      </article>
+      <!-- //END .p-mainVisual -->
+      <article class="p-breadCrumb">
+        <ul class="p-breadCrumb--parent">
+          <li class="p-breadCrumb--item"><a href-"index.html" class="link--none"><i class="fas fa-home"></a></i></li>
+          <li class="p-breadCrumb--item">メニュー</li>
+        </ul>
+      </article>
+      <!-- //END .p-breadCrumb -->
+      <h2 class="p-contactForm__heading mb-24">コースのご案内</h2>
+      <article class="p-mainContent--menu">
+        <section class="p-menu animation">
+          <div class="p-menu__grid--body mb-80">
+            <h3 class="p-menu__heading p-menu__heading--01">
+                    アロマボディトリートメント
                   </h3>
-          <p class="p-menu__subTitle--02 c-transparent">Pre Treatment Counselling</p>
-          <p class="p-menu__catch p-menu__catch--02">
-                            トリートメントを行う前、お客様との大事なコニュニケーションです
-                          </p>
-          <div class="p-menuListFacial--name">
-            <h4>オーガニックアロマフェイシャル</h>
+            <div class="p-menu__subTitle--01">
+              <p class="c-transparent">Body Treatment</p>
+            </div>
+            <div class="p-menu__catch p-menu__catch--01">
+              <p>30種類の精油から体調や気分にあわせて3～4種類をブレンドします</p>
+              <p>深層筋にアプローチすることでトリートメントの後の体の変化をご実感いただけます</>
+            </div>
+            <div class="p-menuListBody--name">
+              <h4>アロマボディトリートメント</h3>
+            </div>
+            <div class="p-menuListBody--time01">
+              <p>60分</p>
+            </div>
+            <div class=" p-menuListBody--price01">
+              <p>8,500円</p>
+            </div>
+            <div class=" p-menuListBody--time02">
+              <p>90分</p>
+            </div>
+            <div class=" p-menuListBody--price02">
+              <p>12,000円</p>
+            </div>
+            <div class=" p-menuListBody--time03">
+              <p>120分</p>
+            </div>
+            <div class=" p-menuListBody--price03">
+              <p>16,000円</p>
+            </div>
           </div>
-          <div class="p-menuListFacial--time01">60分</div>
-          <div class=" p-menuListFacial--price01">8,500円</div>
-          <div class=" p-menuListFacial--time02">90分</div>
-          <div class=" p-menuListFacial--price02">12,000円</div>
-          <div class=" p-menuListFacial--time03">120分</div>
-          <div class=" p-menuListFacial--price03">16,000円</div>
-        </div>
-        <!-- END .p-menu__grid--facial -->
-
-
-        <div class="p-menu__grid--collagen">
-          <h3 class="p-menu__heading p-menu__heading--03">
-                                生コラーゲンフェイシャル
-                                </h3>
-          <p class="p-menu__subTitle--03 c-transparent">Treatment</p>
-          <p class="p-menu__catch p-menu__catch--03">
-                                  お客様ひとりひとりのお肌や体調に合わせたトリートメントを行います
-                                </p>
-          <div class="p-menuListCollagen--name">
-            <h4>オーガニックアロマボディトリートメント</h4>
+          <!-- END p-menu__wrapper -->
+          <div class="p-menu__grid--facial mb-80">
+            <h3 class="p-menu__heading p-menu__heading--02">
+                    フェイシャル
+                    </h3>
+            <p class="p-menu__subTitle--02 c-transparent">Pre Treatment Counselling</p>
+            <p class="p-menu__catch p-menu__catch--02">
+                              トリートメントを行う前、お客様との大事なコニュニケーションです
+                            </p>
+            <div class="p-menuListFacial--name">
+              <h4>オーガニックアロマフェイシャル</h>
+            </div>
+            <div class="p-menuListFacial--time01">60分</div>
+            <div class=" p-menuListFacial--price01">8,500円</div>
+            <div class=" p-menuListFacial--time02">90分</div>
+            <div class=" p-menuListFacial--price02">12,000円</div>
+            <div class=" p-menuListFacial--time03">120分</div>
+            <div class=" p-menuListFacial--price03">16,000円</div>
           </div>
-          <div class="p-menuListCollagen--time01">60分</div>
-          <div class=" p-menuListCollagen--price01">8,500円</div>
-          <div class=" p-menuListCollagen--time02">90分</div>
-          <div class=" p-menuListCollagen--price02">12,000円</div>
-          <div class=" p-menuListCollagen--time03">120分</div>
-          <div class=" p-menuListCollagen--price03">16,000円</div>
-        </div>
-      </section>
-      <!-- Start: 料金表 -->
-      <!-- <section class="p-menuList">
-        <div class="p-menuList--name">オーガニックアロマボディトリートメント</div>
-        <div class="p-menuList--time01">60分</div>
-        <div class=" p-menuList--price01">8,500円</div>
-        <div class=" p-menuList--time02">90分</div>
-        <div class=" p-menuList--price02">12,000円</div>
-        <div class=" p-menuList--time03">120分</div>
-        <div class=" p-menuList--price03">16,000円</div>
-      </section> -->
-      <!-- END : 料金表 -->
+          <!-- END .p-menu__grid--facial -->
 
-    </article>
-    <!-- END //.p-mainContent--menu -->
-  </main>
-  <!-- END l-main mb-80 -->
-  <footer class="l-footer">
-    <div class="sp__nav--wrap">
-      <div class="sp__nav--logo"><a href="index.html" class="logo"><img src="images/petit-chouchou_heading-logo.jpg" alt="Petit Chou Chou(プティシュシュ)"></a></div>
-      <ul class="sp__nav--list">
-        <li>
-          <a href="index.html" class="link--none">トップページ</a>
-        </li>
-        <li>
-          <a href="menu.html" class="link--none">コース</a>
-        </li>
-        <li>
-          <a href="flow.html" class="link--none">施術の流れ</a>
-        </li>
-        <li>
-          <a href="404.html" class="link--none">ご案内</a>
-        </li>
-        <li>
-          <a href="contact.html" class="link--none">お問い合わせ</a>
-        </li>
-      </ul>
-    </div>
-    <div class="p-footer__btn">
-      <small class="p-footer__copyright">@2019 Petit Chou Chou</small>
-    </div>
-  </footer>
+
+          <div class="p-menu__grid--collagen">
+            <h3 class="p-menu__heading p-menu__heading--03">
+                                  生コラーゲンフェイシャル
+                                  </h3>
+            <p class="p-menu__subTitle--03 c-transparent">Treatment</p>
+            <p class="p-menu__catch p-menu__catch--03">
+                                    お客様ひとりひとりのお肌や体調に合わせたトリートメントを行います
+                                  </p>
+            <div class="p-menuListCollagen--name">
+              <h4>オーガニックアロマボディトリートメント</h4>
+            </div>
+            <div class="p-menuListCollagen--time01">60分</div>
+            <div class=" p-menuListCollagen--price01">8,500円</div>
+            <div class=" p-menuListCollagen--time02">90分</div>
+            <div class=" p-menuListCollagen--price02">12,000円</div>
+            <div class=" p-menuListCollagen--time03">120分</div>
+            <div class=" p-menuListCollagen--price03">16,000円</div>
+          </div>
+        </section>
+        <!-- Start: 料金表 -->
+        <!-- <section class="p-menuList">
+          <div class="p-menuList--name">オーガニックアロマボディトリートメント</div>
+          <div class="p-menuList--time01">60分</div>
+          <div class=" p-menuList--price01">8,500円</div>
+          <div class=" p-menuList--time02">90分</div>
+          <div class=" p-menuList--price02">12,000円</div>
+          <div class=" p-menuList--time03">120分</div>
+          <div class=" p-menuList--price03">16,000円</div>
+        </section> -->
+        <!-- END : 料金表 -->
+
+      </article>
+      <!-- END //.p-mainContent--menu -->
+    </main>
+    <!-- END l-main mb-80 -->
+    <footer class="l-footer">
+      <div class="sp__nav--wrap">
+        <div class="sp__nav--logo"><a href="index.html" class="logo"><img src="images/petit-chouchou_heading-logo.jpg" alt="Petit Chou Chou(プティシュシュ)"></a></div>
+        <ul class="sp__nav--list">
+          <li>
+            <a href="index.html" class="link--none">トップページ</a>
+          </li>
+          <li>
+            <a href="menu.html" class="link--none">コース</a>
+          </li>
+          <li>
+            <a href="flow.html" class="link--none">施術の流れ</a>
+          </li>
+          <li>
+            <a href="404.html" class="link--none">ご案内</a>
+          </li>
+          <li>
+            <a href="contact.html" class="link--none">お問い合わせ</a>
+          </li>
+        </ul>
+      </div>
+      <div class="p-footer__btn">
+        <small class="p-footer__copyright">@2019 Petit Chou Chou</small>
+      </div>
+    </footer>
+  </section>
+  <!-- END .l-wrapper -->
   <script type="text/javascript">
     document.getElementById("view_today").innerHTML = getNow();
 
