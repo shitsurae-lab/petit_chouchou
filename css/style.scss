@@ -118,7 +118,8 @@ $mq-breakpoints: (
     // このoverflow:hidden;の記述がないと横スクロールにハマってしまう
 
   @include mq(md){
-  max-width: 1280px;;
+  max-width: 1280px;
+  margin: 0 auto;
   width: 100%;
   overflow: hidden;
     // このoverflow:hidden;の記述がないと横スクロールにハマってしまう
@@ -138,7 +139,8 @@ $mq-breakpoints: (
     flex-direction: column;
 
      @include mq(md) {
-    max-width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
     width: 100%;
     height: auto;
     padding: 8px 0;
@@ -641,6 +643,9 @@ grid-column: 1 / -1;
  padding-top: 106%;;
     margin-bottom: 40px;
     @include mq(md){
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
     padding-top: 31.25%;
     }
     @include mq(lg){
