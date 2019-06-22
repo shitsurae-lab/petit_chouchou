@@ -112,23 +112,8 @@ $mq-breakpoints: (
   /* +++++++++++++++++++++++++
   * layout
   ++++++++++++++++++++++++++ */
-.l-wrapper{
-  width: 100%;
-  overflow: hidden;
-    // このoverflow:hidden;の記述がないと横スクロールにハマってしまう
-
-  @include mq(md){
-  max-width: 1280px;
-  margin: 0 auto;
-  width: 100%;
-  overflow: hidden;
-    // このoverflow:hidden;の記述がないと横スクロールにハマってしまう
-  }
-}
-  /* +++++++++++++++++++++++++
-  * Component
-  ++++++++++++++++++++++++++ */
-  .c-header{
+  //formerName c-header
+  .l-header{
     width: 100%;
     height: auto;
     padding: 8px 0;
@@ -241,6 +226,24 @@ display: flex;
     }
     }
   }
+
+.l-wrapper{
+  width: 100%;
+  overflow: hidden;
+    // このoverflow:hidden;の記述がないと横スクロールにハマってしまう
+
+  @include mq(md){
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  overflow: hidden;
+    // このoverflow:hidden;の記述がないと横スクロールにハマってしまう
+  }
+}
+  /* +++++++++++++++++++++++++
+  * Component
+  ++++++++++++++++++++++++++ */
+
 .c-navbar__toggle{
   z-index: 9999;
   @include mq(md){

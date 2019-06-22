@@ -92,24 +92,7 @@ body {
 /* +++++++++++++++++++++++++
   * layout
   ++++++++++++++++++++++++++ */
-.l-wrapper {
-  width: 100%;
-  overflow: hidden;
-}
-
-@media screen and (min-width: 768px) {
-  .l-wrapper {
-    max-width: 1280px;
-    margin: 0 auto;
-    width: 100%;
-    overflow: hidden;
-  }
-}
-
-/* +++++++++++++++++++++++++
-  * Component
-  ++++++++++++++++++++++++++ */
-.c-header {
+.l-header {
   width: 100%;
   height: auto;
   padding: 8px 0;
@@ -129,7 +112,7 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .c-header {
+  .l-header {
     max-width: 1280px;
     margin: 0 auto;
     width: 100%;
@@ -153,7 +136,7 @@ body {
 }
 
 @media screen and (min-width: 992px) {
-  .c-header {
+  .l-header {
     width: 100%;
     height: auto;
     padding: 8px 0;
@@ -174,7 +157,7 @@ body {
   }
 }
 
-.c-header__logo {
+.l-header__logo {
   width: 96%;
   margin: 0 auto;
   height: auto;
@@ -190,7 +173,7 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .c-header__logo {
+  .l-header__logo {
     width: 36%;
     margin: auto;
     height: auto;
@@ -206,12 +189,12 @@ body {
   }
 }
 
-.c-header__logo > a {
+.l-header__logo > a {
   width: 100%;
   text-decoration: none;
 }
 
-.c-header__logoInner {
+.l-header__logoInner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -221,11 +204,11 @@ body {
   flex-direction: row;
 }
 
-.c-header__logo--symbol {
+.l-header__logo--symbol {
   width: 20%;
 }
 
-.c-header__logo--headline {
+.l-header__logo--headline {
   width: 76%;
   font-size: 1.5rem;
   font-family: 'Lato Light',Helvetica,Arial,sans-serif;
@@ -233,7 +216,7 @@ body {
   position: relative;
 }
 
-.c-header__nav {
+.l-header__nav {
   width: 100%;
   display: none;
   -webkit-box-orient: vertical;
@@ -251,7 +234,7 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .c-header__nav {
+  .l-header__nav {
     width: 50%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -271,7 +254,7 @@ body {
   }
 }
 
-.c-header__nav.open {
+.l-header__nav.open {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -293,7 +276,7 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .c-header__nav.open {
+  .l-header__nav.open {
     -webkit-transform: translateX(0);
     transform: translateX(0);
     overflow-y: auto;
@@ -305,6 +288,23 @@ body {
   }
 }
 
+.l-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  .l-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+/* +++++++++++++++++++++++++
+  * Component
+  ++++++++++++++++++++++++++ */
 .c-navbar__toggle {
   z-index: 9999;
 }
