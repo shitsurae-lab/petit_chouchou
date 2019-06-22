@@ -113,9 +113,16 @@ $mq-breakpoints: (
   * layout
   ++++++++++++++++++++++++++ */
 .l-wrapper{
-  max-width: 1280px;
   width: 100%;
-  margin:0 auto 40px;
+  overflow: hidden;
+    // このoverflow:hidden;の記述がないと横スクロールにハマってしまう
+
+  @include mq(md){
+  max-width: 1280px;;
+  width: 100%;
+  overflow: hidden;
+    // このoverflow:hidden;の記述がないと横スクロールにハマってしまう
+  }
 }
   /* +++++++++++++++++++++++++
   * Component
@@ -124,7 +131,7 @@ $mq-breakpoints: (
     width: 100%;
     height: auto;
     padding: 8px 0;
-    margin: 0 auto;
+    // margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -142,8 +149,8 @@ $mq-breakpoints: (
     flex-direction: row;
     }
 
-    @include mq(xl) {
-    max-width: 1280px;
+    @include mq(lg) {
+     // max-width: 1280px;;
     width: 100%;
     height: auto;
     padding: 8px 0;
@@ -204,7 +211,7 @@ width: 76%;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 16px;
+      padding: 10px;
       transform: translateX(0);
       transition: ease;
       }
@@ -218,7 +225,7 @@ display: flex;
       overflow-y: auto;
     z-index: 9999;
     background: rgba(255, 255, 255, 0.8);
-    height: 80vh;
+    height: 100vh;
     position: absolute;
     top: 60px;
     @include mq(md){
@@ -383,15 +390,15 @@ display: none;
   }
   // ------ Start: index.html ---------->>
   .post{
-    width: 98%;
+    width: 90%;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(16, 160px);
     column-gap: 0px;
     padding: 0;
-    // font-family: 'Noto Sans JP', 'Noto Sans JP Light', sans-serif;
-    // font-weight: 300;
+
+
     font-size: 16px;
     @include mq(md) {
     max-width: 960px;
@@ -627,17 +634,32 @@ grid-column: 1 / -1;
   * Project
   ++++++++++++++++++++++++++ */
   .p-mainVisual{
+    position: relative;
     overflow: hidden;
-    max-width: 1280px;
+     // max-width: 1280px;;
     width: 100%;
-  height: 400px;
-    margin: 0 auto 40px;
+ padding-top: 106%;;
+    margin-bottom: 40px;
+    @include mq(md){
+    padding-top: 31.25%;
+    }
+    @include mq(lg){
+    padding-top: 31.2%;
+    }
+
+    & picture{
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: auto;
+    }
+
   }
 
   // ------ Start: menu.html ---------->>
 
   .p-mainContent--menu{
-    max-width: 1280px;
+     // max-width: 1280px;;
     width: 100%;
     margin: 0 auto;
     background: #EAE9E6;
@@ -653,30 +675,54 @@ grid-column: 1 / -1;
     padding: 80px 0;
 
     &__grid--body{
-    width: 660px;
+    width: 96%;
+    margin: 0 auto;
+    // padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(9,60px);
+    @include mq(md){
+      width: 660px;
     margin: 0 auto;
     // padding: 40px 20px;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     grid-template-rows: 60px repeat(2, 1fr) repeat(3, 40px);
     }
+    }
 
     &__grid--facial{
-    width: 660px;
+    width: 96%;
+    margin: 0 auto;
+    // padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(9,60px);
+    @include mq(md){
+      width: 660px;
     margin: 0 auto;
     // padding: 40px 20px;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     grid-template-rows: 60px repeat(2, 1fr) repeat(3, 48px);
     }
+    }
 
     &__grid--collagen{
-    width: 660px;
+    width: 96%;
+    margin: 0 auto;
+    // padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(9,60px);
+    @include mq(md){
+          width: 660px;
     margin: 0 auto;
     // padding: 40px 20px;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     grid-template-rows: 60px repeat(2, 1fr) repeat(3, 48px);
+    }
     }
 
     &__heading{
@@ -695,51 +741,84 @@ grid-column: 1 / -1;
     transform: translateY(-50%);
     }
       &--01{
-        grid-column: 1 / 2;
+        grid-column: 1 / 3;
         grid-row: 1 / 2;
         align-self: center;
+        @include mq(md){
+ grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        align-self: center;
+        }
       }
 
       &--02{
-        grid-column: 1 / 2;
+        grid-column: 1 / 3;
         grid-row: 1 / 2;
         align-self: center;
+         @include mq(md){
+ grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        align-self: center;
+        }
       }
 
       &--03{
-        grid-column: 1 / 2;
+        grid-column: 1 / 3;
         grid-row: 1 / 2;
         align-self: center;
+         @include mq(md){
+ grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        align-self: center;
+        }
       }
 
       &--04{
-        grid-column: 1 / 2;
+        grid-column: 1 / 3;
         grid-row: 1 / 2;
         align-self: center;
       }
-
+ grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        align-self: center;
     }
 
     &__subTitle{
 
       &--01{
-      grid-column: 2 / 4;
+      grid-column: 1 / 3;
+      grid-row: 2 / 3;
+       @include mq(md){
+grid-column: 2 / 4;
       grid-row: 1 / 2;
+        }
       }
 
       &--02{
-      grid-column: 2 / 4;
+       grid-column: 1 / 3;
+      grid-row: 2 / 3;
+       @include mq(md){
+grid-column: 2 / 4;
       grid-row: 1 / 2;
+        }
       }
 
       &--03{
-      grid-column: 2 / 4;
+      grid-column: 1 / 3;
+      grid-row: 2 / 3;
+       @include mq(md){
+grid-column: 2 / 4;
       grid-row: 1 / 2;
+        }
       }
 
       &--04{
-      grid-column: 2 / 4;
+     grid-column: 1 / 3;
+      grid-row: 2 / 3;
+             @include mq(md){
+grid-column: 2 / 4;
       grid-row: 1 / 2;
+        }
       }
 
     }
@@ -750,16 +829,28 @@ grid-column: 1 / -1;
         color: #a49e8d;
       }
       &--01{
-        grid-column: 1 / 4;
+        grid-column: 1 / 3;
+        grid-row: 3 / 5;
+         @include mq(md){
+grid-column: 1 / 4;
         grid-row: 2 / 4;
+        }
       }
       &--02{
-        grid-column: 1 / 4;
+       grid-column: 1 / 3;
+        grid-row: 3 / 5;
+         @include mq(md){
+grid-column: 1 / 4;
         grid-row: 2 / 4;
+        }
       }
       &--03{
-        grid-column: 1 / 4;
+     grid-column: 1 / 3;
+        grid-row: 3 / 5;
+         @include mq(md){
+grid-column: 1 / 4;
         grid-row: 2 / 4;
+        }
       }
 
       &--04{
@@ -768,19 +859,34 @@ grid-column: 1 / -1;
       }
     }
 
-// 料金表
+
   &ListBody{
 
   &--name{
-    grid-column: 1 / 2;
+    grid-column: 1 / 3;
+    grid-row: 5 / 6;
+    background: #fff;
+    padding: 8px 0 8px 16px;
+    @include mq(md){
+          grid-column: 1 / 2;
     grid-row: 4 / 7;
     background: #fff;
     padding: 8px 0 8px 16px;
+    }
+
   }
 
   &--time{
     &01{
-      grid-column: 2 / 3;
+      grid-column: 1 / 2;
+      grid-row: 6 / 7;
+    padding: 2px 4px;
+    background: #fff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+     @include mq(md){
+  grid-column: 2 / 3;
       grid-row: 4 / 5;
     padding: 2px 4px;
     background: #fff;
@@ -788,8 +894,17 @@ grid-column: 1 / -1;
     justify-content: flex-end;
     align-items: center;
     }
+    }
      &02{
-      grid-column: 2 / 3;
+      grid-column: 1 / 2;
+      grid-row: 7 / 8;
+      padding: 2px 4px;
+    background: #fff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    @include mq(md){
+  grid-column: 2 / 3;
       grid-row: 5 / 6;
       padding: 2px 4px;
     background: #fff;
@@ -797,7 +912,16 @@ grid-column: 1 / -1;
     justify-content: flex-end;
     align-items: center;
     }
+    }
      &03{
+      grid-column: 1 / 2;
+      grid-row: 8 / 9;
+      padding: 2px 4px;
+    background: #fff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+@include mq(md){
       grid-column: 2 / 3;
       grid-row: 6 / 7;
       padding: 2px 4px;
@@ -805,14 +929,22 @@ grid-column: 1 / -1;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-
+    }
     }
   }
   // END --time
 
   &--price{
     &01{
-      grid-column: 3 / 4;
+      grid-column: 2 / 3;
+      grid-row: 6 / 7;
+      padding: 2px 4px;
+      background: #fff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    @include mq(md){
+     grid-column: 3 / 4;
       grid-row: 4 / 5;
       padding: 2px 4px;
       background: #fff;
@@ -820,7 +952,16 @@ grid-column: 1 / -1;
     justify-content: flex-end;
     align-items: center;
     }
+    }
      &02{
+      grid-column: 2 / 3;
+      grid-row: 7 / 8;
+      padding: 2px 4px;
+      background: #fff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+@include mq(md){
       grid-column: 3 / 4;
       grid-row: 5 / 6;
       padding: 2px 4px;
@@ -828,9 +969,17 @@ grid-column: 1 / -1;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-
+    }
     }
      &03{
+      grid-column: 2 / 3;
+      grid-row: 8 / 9;
+      padding: 2px 4px;
+      background: #fff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+@include mq(md){
       grid-column: 3 / 4;
       grid-row: 6 / 7;
       padding: 2px 4px;
@@ -838,7 +987,7 @@ grid-column: 1 / -1;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-
+    }
     }
   }
   // END --price
@@ -847,15 +996,29 @@ grid-column: 1 / -1;
    &ListFacial{
 
   &--name{
-    grid-column: 1 / 2;
+    grid-column: 1 / 3;
+    grid-row: 5 / 6;
+    background: #fff;
+    padding: 8px 0 8px 16px;
+    @include mq(md){
+grid-column: 1 / 2;
     grid-row: 4 / 7;
     background: #fff;
     padding: 8px 0 8px 16px;
+    }
   }
 
   &--time{
     &01{
-      grid-column: 2 / 3;
+      grid-column: 1 / 2;
+      grid-row: 6/ 7;
+      background: #fff;
+      padding: 8px 4px;
+      display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    @include mq(md){
+grid-column: 2 / 3;
       grid-row: 4 / 5;
       background: #fff;
       padding: 8px 4px;
@@ -863,8 +1026,17 @@ grid-column: 1 / -1;
     justify-content: flex-end;
     align-items: center;
     }
+    }
      &02{
-      grid-column: 2 / 3;
+      grid-column: 1 / 2;
+      grid-row: 7 / 8;
+      background: #fff;
+      padding: 8px 4px;
+      display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    @include mq(md){
+  grid-column: 2 / 3;
       grid-row: 5 / 6;
       background: #fff;
       padding: 8px 4px;
@@ -872,21 +1044,39 @@ grid-column: 1 / -1;
     justify-content: flex-end;
     align-items: center;
     }
+    }
      &03{
-      grid-column: 2 / 3;
+      grid-column: 1 / 2;
+      grid-row: 8 / 9;
+      background: #fff;
+      padding: 8px 4px;
+      display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    @include mq(md){
+grid-column: 2 / 3;
       grid-row: 6 / 7;
       background: #fff;
       padding: 8px 4px;
       display: flex;
     justify-content: flex-end;
     align-items: center;
+    }
     }
   }
   // END --time
 
   &--price{
     &01{
-      grid-column: 3 / 4;
+      grid-column: 2 / 3;
+      grid-row: 6 / 7;
+      background: #fff;
+      padding: 8px 4px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      @include mq(md){
+grid-column: 3 / 4;
       grid-row: 4 / 5;
       background: #fff;
       padding: 8px 4px;
@@ -894,8 +1084,17 @@ grid-column: 1 / -1;
       justify-content: flex-end;
       align-items: center;
     }
+    }
      &02{
-      grid-column: 3 / 4;
+      grid-column: 2 / 3;
+      grid-row: 7 / 8;
+      background: #fff;
+      padding: 8px 4px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      @include mq(md){
+     grid-column: 3 / 4;
       grid-row: 5 / 6;
       background: #fff;
       padding: 8px 4px;
@@ -903,7 +1102,16 @@ grid-column: 1 / -1;
       justify-content: flex-end;
       align-items: center;
     }
+    }
      &03{
+      grid-column: 2 / 3;
+      grid-row: 8 / 9;
+      background: #fff;
+      padding: 8px 4px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      @include mq(md){
       grid-column: 3 / 4;
       grid-row: 6 / 7;
       background: #fff;
@@ -911,6 +1119,7 @@ grid-column: 1 / -1;
       display: flex;
       justify-content: flex-end;
       align-items: center;
+    }
     }
   }
   // END --price
@@ -918,17 +1127,30 @@ grid-column: 1 / -1;
 // END ListFacial
 
  &ListCollagen{
-
-  &--name{
-    grid-column: 1 / 2;
+&--name{
+    grid-column: 1 / 3;
+    grid-row: 5 / 6;
+    background: #fff;
+    padding: 8px 0 8px 16px;
+    @include mq(md){
+grid-column: 1 / 2;
     grid-row: 4 / 7;
     background: #fff;
     padding: 8px 0 8px 16px;
+    }
   }
 
   &--time{
     &01{
-      grid-column: 2 / 3;
+      grid-column: 1 / 2;
+      grid-row: 6 / 7;
+      background: #fff;
+      padding: 8px 4px;
+      display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    @include mq(md){
+grid-column: 2 / 3;
       grid-row: 4 / 5;
       background: #fff;
       padding: 8px 4px;
@@ -936,8 +1158,17 @@ grid-column: 1 / -1;
     justify-content: flex-end;
     align-items: center;
     }
+    }
      &02{
-      grid-column: 2 / 3;
+      grid-column: 1 / 2;
+      grid-row: 7 / 8;
+      background: #fff;
+      padding: 8px 4px;
+      display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    @include mq(md){
+  grid-column: 2 / 3;
       grid-row: 5 / 6;
       background: #fff;
       padding: 8px 4px;
@@ -945,21 +1176,39 @@ grid-column: 1 / -1;
     justify-content: flex-end;
     align-items: center;
     }
+    }
      &03{
-      grid-column: 2 / 3;
+      grid-column: 1 / 2;
+      grid-row: 8 / 9;
+      background: #fff;
+      padding: 8px 4px;
+      display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    @include mq(md){
+grid-column: 2 / 3;
       grid-row: 6 / 7;
       background: #fff;
       padding: 8px 4px;
       display: flex;
     justify-content: flex-end;
     align-items: center;
+    }
     }
   }
   // END --time
 
   &--price{
     &01{
-      grid-column: 3 / 4;
+      grid-column: 2 / 3;
+      grid-row: 6 / 7;
+      background: #fff;
+      padding: 8px 4px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      @include mq(md){
+grid-column: 3 / 4;
       grid-row: 4 / 5;
       background: #fff;
       padding: 8px 4px;
@@ -967,8 +1216,17 @@ grid-column: 1 / -1;
       justify-content: flex-end;
       align-items: center;
     }
+    }
      &02{
-      grid-column: 3 / 4;
+      grid-column: 2 / 3;
+      grid-row: 7 / 8;
+      background: #fff;
+      padding: 8px 4px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      @include mq(md){
+     grid-column: 3 / 4;
       grid-row: 5 / 6;
       background: #fff;
       padding: 8px 4px;
@@ -976,7 +1234,16 @@ grid-column: 1 / -1;
       justify-content: flex-end;
       align-items: center;
     }
+    }
      &03{
+      grid-column: 2 / 3;
+      grid-row: 8 / 9;
+      background: #fff;
+      padding: 8px 4px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      @include mq(md){
       grid-column: 3 / 4;
       grid-row: 6 / 7;
       background: #fff;
@@ -984,6 +1251,7 @@ grid-column: 1 / -1;
       display: flex;
       justify-content: flex-end;
       align-items: center;
+    }
     }
   }
   // END --price
@@ -1004,7 +1272,7 @@ grid-column: 1 / -1;
     margin: 0 auto;
   }
   .p-breadCrumb{
-  max-width: 1280px;
+   // max-width: 1280px;;
   width: 100%;
   padding: 0 30px;
   margin: 0 auto 24px;
@@ -1035,6 +1303,7 @@ grid-column: 1 / -1;
   }
 
   .p-flow{
+
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -1058,25 +1327,40 @@ grid-column: 1 / -1;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
+    @include mq(md){
+
+    }
     }
       &--01{
         grid-column: 1 / 3;
         grid-row: 1 / 2;
+         @include mq(md){
+
+    }
       }
 
       &--02{
         grid-column: 1 / 3;
         grid-row: 7 / 8;
+         @include mq(md){
+
+    }
       }
 
       &--03{
         grid-column: 1 / 3;
         grid-row: 13 / 14;
+         @include mq(md){
+
+    }
       }
 
       &--04{
         grid-column: 1 / 3;
         grid-row: 19 / 20;
+         @include mq(md){
+
+    }
       }
 
     }
@@ -1086,21 +1370,33 @@ grid-column: 1 / -1;
       &--01{
       grid-column: 4 / 6;
       grid-row: 1 / 2;
+       @include mq(md){
+
+    }
       }
 
       &--02{
       grid-column: 4 / 6;
       grid-row: 7 / 8;
+       @include mq(md){
+
+    }
       }
 
       &--03{
       grid-column: 4 / 6;
       grid-row: 13 / 14;
+       @include mq(md){
+
+    }
       }
 
       &--04{
       grid-column: 4 / 6;
       grid-row: 19 / 20;
+       @include mq(md){
+
+    }
       }
 
     }
@@ -1111,19 +1407,31 @@ grid-column: 1 / -1;
       &--01{
         grid-column: 1 / 6;
         grid-row: 2 / 3;
+         @include mq(md){
+
+    }
       }
       &--02{
         grid-column: 1 / 6;
         grid-row: 8 / 9;
+         @include mq(md){
+
+    }
       }
       &--03{
         grid-column: 1 / 6;
         grid-row: 14 / 15;
+         @include mq(md){
+
+    }
       }
 
       &--04{
         grid-column: 1 / 6;
         grid-row: 20 / 21;
+         @include mq(md){
+
+    }
       }
     }
     &__sentence{
@@ -1131,21 +1439,33 @@ grid-column: 1 / -1;
       &--01{
       grid-column: 1 / 4;
       grid-row: 3 / 5;
+       @include mq(md){
+
+    }
       }
 
       &--02{
       grid-column: 1 / 4;
       grid-row: 9 / 11;
+       @include mq(md){
+
+    }
       }
 
       &--03{
       grid-column: 1 / 4;
       grid-row: 15 / 17;
+       @include mq(md){
+
+    }
       }
 
       &--04{
       grid-column: 1 / 4;
       grid-row: 21 / 23;
+       @include mq(md){
+
+    }
       }
     }
 
@@ -1154,21 +1474,33 @@ grid-column: 1 / -1;
       &--01{
       grid-column: 4 / 6;
       grid-row: 3 / 5;
+       @include mq(md){
+
+    }
       }
 
       &--02{
       grid-column: 4 / 6;
       grid-row: 9 / 11;
+       @include mq(md){
+
+    }
       }
 
       &--03{
       grid-column: 4 / 6;
       grid-row: 15 / 17;
+       @include mq(md){
+
+    }
       }
 
       &--04{
       grid-column: 4 / 6;
       grid-row: 21 / 23;
+       @include mq(md){
+
+    }
       }
     }
   }
@@ -1178,17 +1510,26 @@ grid-column: 1 / -1;
   // ------ Start: 404.html ---------->>
 
   .p-underConstruct{
-    width: 1280px;
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 0 30px;
+    width: 100%;
+    // padding: 0 30px;
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 16px;
 
   &__video{
-  width: 1280px;
+  max-width: 1280px;
+  width: 100%;;
   margin: 0 auto;
   position: relative;
   padding-top: 720px;
+  display: none;
+  @include mq(md){
+display: none;
+  }
+    @include mq(lg){
+display: block;
+  }
 
   &:hover::before{
     width: 1280px;
@@ -1245,6 +1586,32 @@ grid-column: 1 / -1;
   }
   }
 
+    &__videoAlt{
+    display: block;
+    position: relative;
+    overflow: hidden;
+     // max-width: 1280px;;
+    width: 100%;
+ padding-top: 106%;;
+    margin-bottom: 40px;
+    @include mq(md){
+    display: block;
+    padding-top: 31.25%;
+    }
+    @include mq(lg){
+    display: none;
+    padding-top: 31.2%;
+    }
+
+    & picture{
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: auto;
+    }
+
+  }
+
   &__notice{
     padding: 40px 20px;
 
@@ -1283,9 +1650,13 @@ padding-top: 48px;
 }
   }
   .p-mainContent--form{
-    max-width: 1280px;
     width: 100%;
     margin: 0 auto;
+    @include mq(lg){
+       // max-width: 1280px;;
+    width: 100%;
+    margin: 0 auto;
+    }
 
 
   &Inner{
@@ -1305,8 +1676,14 @@ font-family: 'Noto Sans JP Light','Noto Sans JP','Hiragino Kaku Gothic ProN','�
   }
 
   &Notes{
+
+    width: 100%;
+    margin: 0 auto;
+
+    @include mq(lg){
     width: 660px;
     margin: 0 auto;
+    }
 
     & h3{
       text-align: center;
@@ -1320,27 +1697,53 @@ font-family: 'Noto Sans JP Light','Noto Sans JP','Hiragino Kaku Gothic ProN','�
 
   &List{
     border-top: 1px solid #d3d1ca;
+    padding: 16px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    @include mq (lg){
+    border-top: 1px solid #d3d1ca;
     padding: 16px 60px 16px 10px;
     width: 660px;
     margin: 0 auto;
     display: flex;
+    flex-direction: row;
+    }
+
 
     & > label{
-      width: 50%;
+      width: 100%;
       text-align: right;
       padding-right: 16px;
+      @include mq(lg){
+        width: 50%;
+      text-align: right;
+      padding-right: 16px;
+      }
+
     }
   }
 
   &Commit{
     border-top: 1px solid #d3d1ca;
     border-bottom: 1px solid #d3d1ca;
-    padding: 16px 60px 16px 10px;
-    width: 660px;
+    padding: 16px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include mq(lg){
+    border-top: 1px solid #d3d1ca;
+    border-bottom: 1px solid #d3d1ca;
+    padding: 16px 60px 16px 10px;
+    width: 660px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    }
 
     & > .g-recaptcha{
       margin-bottom: 16px;
@@ -1372,18 +1775,26 @@ padding-top: 48px;
 }
   }
   .p-mainContent--thanks{
-    max-width: 1280px;
+     // max-width: 1280px;;
     width: 100%;
-    margin: 0 auto;
+    margin: auto;
 
 
   &Inner{
-    max-width: 960px;
+ max-width: 960px;
+    background: #eae9e6;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 180%;
+    position: relative;
+    @include mq(md){
+      max-width: 960px;
     background: #eae9e6;
     width: 100%;
     margin: 0 auto;
     padding-top: 40%;
     position: relative;
+    }
   }
 
   &Notes{
@@ -1391,8 +1802,16 @@ position: absolute;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
+    width: 90%;
+    margin: 0 auto;
+    @include mq(md){
+     position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
     width: 660px;
     margin: 0 auto;
+    }
 
     & h3{
           color: #fdfdfd;
@@ -1405,7 +1824,11 @@ transform: translate(-50%, -50%);
 
     & li{
     border-top: 1px solid #d3d1ca;
+    padding: 16px;
+    @include mq(md){
+     border-top: 1px solid #d3d1ca;
     padding: 16px 60px;
+    }
     }
   }
 
@@ -1437,7 +1860,7 @@ padding-top: 48px;
 }
   }
   .p-mainContent--personal{
-    max-width: 1280px;
+     // max-width: 1280px;;
     width: 100%;
     margin: 0 auto;
 
@@ -1463,8 +1886,14 @@ font-family: 'Noto Sans JP Light','Noto Sans JP','Hiragino Kaku Gothic ProN','�
     background: #eae9e6;
     width: 100%;
     margin: 0 auto;
+    padding: 40px;
+@include mq(md){
+ max-width: 960px;
+    background: #eae9e6;
+    width: 100%;
+    margin: 0 auto;
     padding: 40px 80px;
-
+}
     & h3{
       font-size: 1.25rem;
       text-align: left;
@@ -1486,11 +1915,18 @@ font-family: 'Noto Sans JP Light','Noto Sans JP','Hiragino Kaku Gothic ProN','�
 
     & p{
     border-top: 1px solid #d3d1ca;
+    padding: 16px;
+    @include mq(md){
+  border-top: 1px solid #d3d1ca;
     padding: 16px 60px;
+    }
     }
 
     & li{
-    padding: 8px 60px;
+    padding: 16px;
+    @include mq(md){
+       padding: 8px 60px;
+    }
     }
   }
 
@@ -1500,9 +1936,9 @@ font-family: 'Noto Sans JP Light','Noto Sans JP','Hiragino Kaku Gothic ProN','�
 
    // ------ START: footer ---------->>
      .p-footer .p-footer__btn {
-    max-width: 1280px;
+     // max-width: 1280px;;
     width: 100%;
-    margin: 0 auto;
+    // margin: 0 auto;
     background-color: #a39d8c;
     padding: 24px 0;
     color: #fff;
@@ -1537,54 +1973,76 @@ font-family: 'Noto Sans JP Light','Noto Sans JP','Hiragino Kaku Gothic ProN','�
 
 
   // ------ END: footer ---------->>
+  // swiper使用する際の記述
+// .swiper-container{
+//   width: 100%;
+//   height: 580px;
 
+// }
   .slideshow{
+    overflow: hidden;
       width: 100%;
       position: relative;
-      height: 580px;
-      margin: 0 auto 40px;
+      padding-top: 106%;
+      margin-bottom: 40px;
 @include mq(md){
-  max-width: 1280px;
+   // max-width: 1280px;;
     width: 100%;
     position: relative;
     overflow: hidden;
-  height: 400px;
-    margin: 0 auto 40px;
+  padding-top: 31.25%;
+    margin-bottom:40px;
   }
-  }
-    .slideshow.open{
-      width: 100%;
-      position: relative;
-      height: 580px;
-      margin: 0 auto 40px;
-@include mq(md){
-  max-width: 1280px;
+  @include mq(lg){
+   // max-width: 1280px;;
     width: 100%;
     position: relative;
     overflow: hidden;
-  height: 400px;
-    margin: 0 auto 40px;
+padding-top: 31.2%;
+    margin-bottom: 40px;
   }
   }
+  //   .slideshow.open{
+  //     width: 100%;
+  //     position: relative;
+  //     height: 0;
+  //     margin: 0 auto 40px;
 
-  .slideshow img{
+  // }
+
+  .slideshow picture{
     position: absolute;
     top: 0;
-    transform: transformY(0);
+    left: 0;
+    // transform: transformX(0);
+    margin: auto;
     display: none;
     height: 580px;
-    object-fit: cover;
+    // object-fit: cover;
     @include mq(md){
     position: absolute;
     top: 0;
-    transform: transformY(0);
+    left: 0;
+    // transform: transformX(0);
+    margin: auto;
     display: none;
-    height: 400px;
-    object-fit: cover;
+    height: 290px;
+    // object-fit: cover;
     }
     // left: 50%;
     // margin-left: -500px;
+
+    @include mq(lg){
+    position: absolute;
+    top: 0;
+    left: 0;
+    // transform: transformX(0);
+    margin: auto;
+    display: none;
+      height: 400px;
+    }
   }
+
 
 
   //アニメーションディレイ
@@ -1594,10 +2052,10 @@ font-family: 'Noto Sans JP Light','Noto Sans JP','Hiragino Kaku Gothic ProN','�
     transition: all .6s ease;
 
   &.left {
-   transform: translate3d(-100%, 0, 0);
+   transform: translate3d(-30%, 0, 0);
   }
   &.right {
-   transform: translate3d(100%, 0, 0);
+   transform: translate3d(300%, 0, 0);
   }
   &.delay {
    transition: all 2s ease;

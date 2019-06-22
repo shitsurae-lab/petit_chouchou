@@ -2,7 +2,7 @@ $(function() {
   //slideShowクラスをもつ要素ごとに処理を実行
   $('.slideshow').each(function() {
 
-    var $slides = $(this).find('img');
+    var $slides = $(this).find('picture');
     var slideCount = $slides.length;
     var currentIndex = 0;
 

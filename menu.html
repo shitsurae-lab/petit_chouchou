@@ -6,12 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sanitize.css/2.0.0/sanitize.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato|Noto+Sans+JP&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Noto+Sans+JP:300,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <title>Petit Chou Chou</title>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="js/main.js"></script>
   <script src="js/animationDelay.js"></script>
+  <script src="js/drawer.js"></script>
 </head>
 <body>
   <header id="header" class="c-header" role="banner" itemscope="itemscope">
@@ -22,8 +23,8 @@
         </div>
         <!-- END //.c-header__logo--symbol -->
         <h1 class="c-header__logo--headline link--none">
-                Petit Chou Chou
-              </h1>
+            Petit Chou Chou
+          </h1>
       </a>
       <div class="c-navbar__toggle">
         <span class="c-navbar__toggle--icon"></span>
@@ -33,7 +34,8 @@
       <!-- END c-navbar__toggle -->
     </div>
     <!-- END .c-header__logo -->
-    <nav class="c-header__nav">
+
+    <div class="c-header__nav">
       <ul class="c-gnavi">
         <a href="menu.html" class="link--none c-gnavi__navItem">
           <li class="">コース</li>
@@ -48,10 +50,17 @@
           <li class="">お問い合わせ</li>
         </a>
       </ul>
-    </nav>
+    </div>
   </header>
   <article class="p-mainVisual">
-    <img src="images/main_slide-01.jpg" srcset="images/main_slide-01@2x.jpg, images/main_slide-01.jpg 1x" alt="petit ChouChou ラベンダーイメージ">
+    <picture>
+      <source media="(max-width:414px)" src="images/main_slide-mobile01.jpg" srcset="images/main_slide-mobile01.jpg 1x ,images/main_slide-mobile01@2x.jpg 2x 640w" sizes="100vw">
+      <source srcset="images/main_slide-01.jpg 1280w,
+                          images/main_slide-01@2x.jpg 2560w" sizes="(max-width:2560px) 100vw,
+                            2560px">
+      <img src="images/main_slide-01.jpg" alt="エッセンシャルオイル">
+    </picture>
+    <!-- <img src="images/main_slide-01.jpg" srcset="images/main_slide-01@2x.jpg, images/main_slide-01.jpg 1x" alt="petit ChouChou ラベンダーイメージ"> -->
   </article>
   <!-- //END .p-mainVisual -->
   <section class="l-wrapper mb-80">
@@ -66,11 +75,9 @@
     <article class="p-mainContent--menu">
       <section class="p-menu animation">
         <div class="p-menu__grid--body mb-80">
-          <div class="p-menu__heading--01">
-            <h2 class="p-menu__heading">
+          <h3 class="p-menu__heading p-menu__heading--01">
                   アロマボディトリートメント
-                </h2>
-          </div>
+                </h3>
           <div class="p-menu__subTitle--01">
             <p class="c-transparent">Body Treatment</p>
           </div>
@@ -79,7 +86,7 @@
             <p>深層筋にアプローチすることでトリートメントの後の体の変化をご実感いただけます</>
           </div>
           <div class="p-menuListBody--name">
-            <h3 class="">アロマボディトリートメント</h3>
+            <h4>アロマボディトリートメント</h3>
           </div>
           <div class="p-menuListBody--time01">
             <p>60分</p>
@@ -102,14 +109,16 @@
         </div>
         <!-- END p-menu__wrapper -->
         <div class="p-menu__grid--facial mb-80">
-          <h2 class=" p-menu__heading p-menu__heading--02">
+          <h3 class="p-menu__heading p-menu__heading--02">
                   フェイシャル
-                  </h2>
+                  </h3>
           <p class="p-menu__subTitle--02 c-transparent">Pre Treatment Counselling</p>
           <p class="p-menu__catch p-menu__catch--02">
                             トリートメントを行う前、お客様との大事なコニュニケーションです
                           </p>
-          <div class="p-menuListFacial--name">オーガニックアロマフェイシャル</div>
+          <div class="p-menuListFacial--name">
+            <h4>オーガニックアロマフェイシャル</h>
+          </div>
           <div class="p-menuListFacial--time01">60分</div>
           <div class=" p-menuListFacial--price01">8,500円</div>
           <div class=" p-menuListFacial--time02">90分</div>
@@ -121,14 +130,16 @@
 
 
         <div class="p-menu__grid--collagen">
-          <h2 class="p-menu__heading p-menu__heading--03">
+          <h3 class="p-menu__heading p-menu__heading--03">
                                 生コラーゲンフェイシャル
-                                </h2>
+                                </h3>
           <p class="p-menu__subTitle--03 c-transparent">Treatment</p>
           <p class="p-menu__catch p-menu__catch--03">
                                   お客様ひとりひとりのお肌や体調に合わせたトリートメントを行います
                                 </p>
-          <div class="p-menuListCollagen--name">オーガニックアロマボディトリートメント</div>
+          <div class="p-menuListCollagen--name">
+            <h4>オーガニックアロマボディトリートメント</h4>
+          </div>
           <div class="p-menuListCollagen--time01">60分</div>
           <div class=" p-menuListCollagen--price01">8,500円</div>
           <div class=" p-menuListCollagen--time02">90分</div>
@@ -155,7 +166,7 @@
   <!-- END l-wrapper mb-80 -->
   <footer class="p-footer">
     <div class="sp__nav--wrap">
-      <div class="sp__nav--logo"><a href="index.html" class="logo"><img src="images/petit-chouchou__headingLogo.jpg" alt="Petit Chou Chou(プティシュシュ)"></a></div>
+      <div class="sp__nav--logo"><a href="index.html" class="logo"><img src="images/petit-chouchou_heading-logo.jpg" alt="Petit Chou Chou(プティシュシュ)"></a></div>
       <ul class="sp__nav--list">
         <li>
           <a href="index.html" class="link--none">トップページ</a>

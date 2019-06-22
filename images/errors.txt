@@ -1,0 +1,10 @@
+[2019-6-17 19:55:48] layer "reservation.jpg": Duplicate path: reservation.jpg
+[2019-6-17 19:55:48] layer "200% reservation@2x.jpg, reservation.jpg": Duplicate path: reservation@2x.jpg
+[2019-6-17 19:55:48] layer "200% reservation@2x.jpg, reservation.jpg": Duplicate path: reservation.jpg
+[2019-6-17 19:55:48] layer "200% pre-counselling@2x.jpg, pre-counselling.jpg": Duplicate path: pre-counselling@2x.jpg
+[2019-6-17 19:55:48] layer "200% pre-counselling@2x.jpg, pre-counselling.jpg": Duplicate path: pre-counselling.jpg
+[2019-6-17 19:55:48] layer "reservation.jpg": Duplicate path: reservation.jpg
+[2019-6-17 19:55:48] layer "200% treatment@2x.jpg, treatment.jpg": Duplicate path: treatment@2x.jpg
+[2019-6-17 19:55:48] layer "200% treatment@2x.jpg, treatment.jpg": Duplicate path: treatment.jpg
+[2019-6-17 19:55:48] layer "200% after-counselling@2x.jpg,  after-counselling.jpg": Duplicate path: after-counselling@2x.jpg
+[2019-6-17 19:55:48] layer "200% after-counselling@2x.jpg,  after-counselling.jpg": Duplicate path: after-counselling.jpg
