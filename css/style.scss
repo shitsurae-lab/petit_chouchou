@@ -112,6 +112,21 @@ $mq-breakpoints: (
   /* +++++++++++++++++++++++++
   * layout
   ++++++++++++++++++++++++++ */
+  .l-wrapper{
+    max-width: 414px;
+    width: 96%;
+    margin: 0 auto;
+    @include mq(md){
+     max-width: 768px;
+    width: 96%;
+    margin: 0 auto;
+    }
+    @include mq(lg){
+      max-width: 1280px;
+      width: 98%;
+      margin: 0 auto;
+    }
+  }
   //formerName c-header
   .l-header{
     width: 100%;
@@ -227,7 +242,7 @@ display: flex;
     }
   }
 
-.l-wrapper{
+.l-main{
   width: 100%;
   overflow: hidden;
     // このoverflow:hidden;の記述がないと横スクロールにハマってしまう
@@ -1943,7 +1958,7 @@ font-family: 'Noto Sans JP Light','Noto Sans JP','Hiragino Kaku Gothic ProN','�
   // ------ END: personal.html ---------->>
 
    // ------ START: footer ---------->>
-     .p-footer .p-footer__btn {
+     .l-footer .l-footer__btn {
      // max-width: 1280px;;
     width: 100%;
     // margin: 0 auto;
@@ -1951,7 +1966,7 @@ font-family: 'Noto Sans JP Light','Noto Sans JP','Hiragino Kaku Gothic ProN','�
     padding: 24px 0;
     color: #fff;
 }
-.p-footer__btn{
+.l-footer__btn{
   text-align: center;
 }
 .sp__nav--wrap{

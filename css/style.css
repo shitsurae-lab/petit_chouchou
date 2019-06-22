@@ -92,6 +92,28 @@ body {
 /* +++++++++++++++++++++++++
   * layout
   ++++++++++++++++++++++++++ */
+.l-wrapper {
+  max-width: 414px;
+  width: 96%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .l-wrapper {
+    max-width: 768px;
+    width: 96%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .l-wrapper {
+    max-width: 1280px;
+    width: 98%;
+    margin: 0 auto;
+  }
+}
+
 .l-header {
   width: 100%;
   height: auto;
@@ -288,13 +310,13 @@ body {
   }
 }
 
-.l-wrapper {
+.l-main {
   width: 100%;
   overflow: hidden;
 }
 
 @media screen and (min-width: 768px) {
-  .l-wrapper {
+  .l-main {
     max-width: 1280px;
     margin: 0 auto;
     width: 100%;
@@ -2367,14 +2389,14 @@ body {
   }
 }
 
-.p-footer .p-footer__btn {
+.l-footer .l-footer__btn {
   width: 100%;
   background-color: #a39d8c;
   padding: 24px 0;
   color: #fff;
 }
 
-.p-footer__btn {
+.l-footer__btn {
   text-align: center;
 }
 
