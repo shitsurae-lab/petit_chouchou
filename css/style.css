@@ -1407,7 +1407,7 @@ body {
 @media screen and (min-width: 768px) {
   .p-menuListFacial--time03 {
     grid-column: 2 / 3;
-    grid-row: 9 / 10;
+    grid-row: 7 / 8;
     background: #fff;
     padding: 8px 4px;
     display: -webkit-box;
