@@ -17,149 +17,152 @@
   <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
-  <header id="header" class="c-header" role="banner" itemscope="itemscope">
-    <div class="c-header__logo">
-      <a href="index.html" class="c-header__logoInner">
-        <div class="c-header__logo--symbol">
-          <img src="images/petit-chouchou_heading-logo.png" srcset="images/petit-chouchou_heading-logo.png 1x, images/petit-chouchou_heading-logo@2x.png 2x" alt="オーガニックアロマセラピーサロン プティシュシュ">
+  <section class="l-wrapper">
+    <header id="header" class="l-header" role="banner" itemscope="itemscope">
+      <div class="l-header__logo">
+        <a href="index.html" class="l-header__logoInner">
+          <div class="l-header__logo--symbol">
+            <img src="images/petit-chouchou_heading-logo.png" srcset="images/petit-chouchou_heading-logo.png 1x, images/petit-chouchou_heading-logo@2x.png 2x" alt="オーガニックアロマセラピーサロン プティシュシュ">
+          </div>
+          <!-- END //.l-header__logo--symbol -->
+          <h1 class="l-header__logo--headline link--none">
+                Petit Chou Chou
+              </h1>
+        </a>
+        <div class="c-navbar__toggle">
+          <span class="c-navbar__toggle--icon"></span>
+          <span class="c-navbar__toggle--icon"></span>
+          <span class="c-navbar__toggle--icon"></span>
         </div>
-        <!-- END //.c-header__logo--symbol -->
-        <h1 class="c-header__logo--headline link--none">
-              Petit Chou Chou
-            </h1>
-      </a>
-      <div class="c-navbar__toggle">
-        <span class="c-navbar__toggle--icon"></span>
-        <span class="c-navbar__toggle--icon"></span>
-        <span class="c-navbar__toggle--icon"></span>
+        <!-- END c-navbar__toggle -->
       </div>
-      <!-- END c-navbar__toggle -->
-    </div>
-    <!-- END .c-header__logo -->
+      <!-- END .l-header__logo -->
 
-    <div class="c-header__nav">
-      <ul class="c-gnavi">
-        <a href="menu.html" class="link--none c-gnavi__navItem">
-          <li class="">コース</li>
-        </a>
-        <a href="flow.html" class="link--none  c-gnavi__navItem">
-          <li class="">施術の流れ</li>
-        </a>
-        <a href="404.html" class="link--none  c-gnavi__navItem">
-          <li class="">ご案内</li>
-        </a>
-        <a href="contact.html" class="link--none  c-gnavi__navItem">
-          <li class="">お問い合わせ</li>
-        </a>
-      </ul>
-    </div>
-  </header>
-  <article class="p-mainVisual">
-    <picture>
-      <source media="(max-width:414px)" src="images/main_slide-mobile03.jpg" srcset="images/main_slide-mobile03.jpg 1x ,images/main_slide-mobile03@2x.jpg 2x 640w" sizes="100vw">
-      <source srcset="images/main_slide-03.jpg 1280w,
-                      images/main_slide-03@2x.jpg 2560w" sizes="(max-width:2560px) 100vw,
-                        2560px">
-      <img src="images/main_slide-03.jpg" alt="ラベンダーイメージ">
-    </picture>
-    <!-- <img src="images/main_slide-02.jpg" srcset="images/main_slide-02@2x.jpg, images/main_slide-02.jpg 1x" alt="petit ChouChou ラベンダーイメージ"> -->
-  </article>
-  <section class="l-wrapper mb-80">
-    <article class="p-breadCrumb mb-40">
-      <ul class="p-breadCrumb--parent">
-        <li class="p-breadCrumb--item"><a href-"index.html" class="link--none"><i class="fas fa-home"></a></i></li>
-        <li class="p-breadCrumb--item">お問い合わせ</li>
-    </article>
-    <h2 class="p-contactForm__heading mb-24">お問い合わせ</h2>
-    <article class="p-mainContent--formNotes mb-40">
-      <h3>必ずご確認ください</h3>
-      <ul>
-        <li>当サロンは顧客様及び顧客様からのご紹介者さまを対象としたプライベートサロンとして運営されています。只今ご新規のお客様のご予約は大変申し訳ございませんが承っておりません。予めご了承くださいませ</li>
-        <li>お問い合わせフォームの内容を確認後、概ね2〜3営業日以内に折返し担当者からご連絡致します。送信後、5日間以上経っても当サロンからの返信が届かない場合は恐れ入りますが再度ご連絡ください。</li>
-        <li>お問い合わせ頂いた内容によってはご返信できかねる場合もございます。また営業の方からご連絡にはご対応しておりませんのでご了承ください</li>
-        <li>当サロンの個人情報の取扱については<a href="personal.html" class="link--none">こちら</a>にございます。どうぞご確認ください</li>
-      </ul>
-    </article>
-
-    <section class="p-mainContent--form">
-      <div class="p-mainContent--formInner">
-        <!-- class, action, methodを変更しないでください -->
-        <form class="formrun" action="https://form.run/api/v1/r/9o9312mzlyd4f32dmxdeo0m3" method="post">
-          <!-- ↓自由に要素を追加・編集することができます -->
-          <div class="p-mainContent--formList">
-            <label>お名前</label>
-            <input name="お名前" type="text" size="40">
-          </div>
-
-          <div class="p-mainContent--formList">
-            <label>メールアドレス [必須]</label>
-            <input name="メールアドレス" type="text" size="40" data-formrun-type="email" data-formrun-required>
-            <div data-formrun-show-if-error="メールアドレス">メールアドレスを正しく入力してください</div>
-          </div>
-
-          <div class="p-mainContent--formList">
-            <label>お問い合わせ [必須]</label>
-            <textarea name="お問い合わせ" cols="40" rows="4" data-formrun-required></textarea>
-            <div data-formrun-show-if-error="お問い合わせ">お問い合わせ入力してください</div>
-          </div>
-
-          <div class="p-mainContent--formList">
-            <label>個人情報利用同意 [必須]</label>
-            <input type="checkbox" name="個人情報利用同意" data-formrun-required>
-            <div data-formrun-show-if-error="個人情報利用同意">同意してください</div>
-          </div>
-
-          <!-- ボット投稿をブロックするためのタグ -->
-          <div class="_formrun_gotcha">
-            <style media="screen">
-              ._formrun_gotcha {
-                position: absolute !important;
-                height: 1px;
-                width: 1px;
-                overflow: hidden;
-              }
-            </style>
-            <label for="_formrun_gotcha">If you are a human, ignore this field</label>
-            <input type="text" name="_formrun_gotcha" id="_formrun_gotcha" tabindex="-1">
-          </div>
-          <div class="p-mainContent--formCommit">
-            <div class="g-recaptcha" data-sitekey="6LfqO6kUAAAAABqFK2tZ6LCGIRkGg9XTFTKVc_-L"></div>
-
-            <button type="submit" data-formrun-error-text="未入力の項目があります" data-formrun-submitting-text="送信中...">送信</button>
-          </div>
-          <!-- END mail_send -->
-        </form>
-
+      <div class="l-header__nav">
+        <ul class="c-gnavi">
+          <a href="menu.html" class="link--none c-gnavi__navItem">
+            <li class="">コース</li>
+          </a>
+          <a href="flow.html" class="link--none  c-gnavi__navItem">
+            <li class="">施術の流れ</li>
+          </a>
+          <a href="404.html" class="link--none  c-gnavi__navItem">
+            <li class="">ご案内</li>
+          </a>
+          <a href="contact.html" class="link--none  c-gnavi__navItem">
+            <li class="">お問い合わせ</li>
+          </a>
+        </ul>
       </div>
-      <!-- //END .p-contactForm__inner -->
+    </header>
 
-    </section>
+    <main class="l-main mb-80">
+      <article class="p-mainVisual">
+        <picture>
+          <source media="(max-width:414px)" src="images/main_slide-mobile03.jpg" srcset="images/main_slide-mobile03.jpg 1x ,images/main_slide-mobile03@2x.jpg 2x 640w" sizes="100vw">
+          <source srcset="images/main_slide-03.jpg 1280w,
+                            images/main_slide-03@2x.jpg 2560w" sizes="(max-width:2560px) 100vw,
+                              2560px">
+          <img src="images/main_slide-03.jpg" alt="ラベンダーイメージ">
+        </picture>
+        <!-- <img src="images/main_slide-02.jpg" srcset="images/main_slide-02@2x.jpg, images/main_slide-02.jpg 1x" alt="petit ChouChou ラベンダーイメージ"> -->
+      </article>
+      <article class="p-breadCrumb mb-40">
+        <ul class="p-breadCrumb--parent">
+          <li class="p-breadCrumb--item"><a href-"index.html" class="link--none"><i class="fas fa-home"></a></i></li>
+          <li class="p-breadCrumb--item">お問い合わせ</li>
+      </article>
+      <h2 class="p-contactForm__heading mb-24">お問い合わせ</h2>
+      <article class="p-mainContent--formNotes mb-40">
+        <h3>必ずご確認ください</h3>
+        <ul>
+          <li>当サロンは顧客様及び顧客様からのご紹介者さまを対象としたプライベートサロンとして運営されています。只今ご新規のお客様のご予約は大変申し訳ございませんが承っておりません。予めご了承くださいませ</li>
+          <li>お問い合わせフォームの内容を確認後、概ね2〜3営業日以内に折返し担当者からご連絡致します。送信後、5日間以上経っても当サロンからの返信が届かない場合は恐れ入りますが再度ご連絡ください。</li>
+          <li>お問い合わせ頂いた内容によってはご返信できかねる場合もございます。また営業の方からご連絡にはご対応しておりませんのでご了承ください</li>
+          <li>当サロンの個人情報の取扱については<a href="personal.html" class="link--none">こちら</a>にございます。どうぞご確認ください</li>
+        </ul>
+      </article>
+
+      <section class="p-mainContent--form">
+        <div class="p-mainContent--formInner">
+          <!-- class, action, methodを変更しないでください -->
+          <form class="formrun" action="https://form.run/api/v1/r/9o9312mzlyd4f32dmxdeo0m3" method="post">
+            <!-- ↓自由に要素を追加・編集することができます -->
+            <div class="p-mainContent--formList">
+              <label>お名前</label>
+              <input name="お名前" type="text" size="40">
+            </div>
+
+            <div class="p-mainContent--formList">
+              <label>メールアドレス [必須]</label>
+              <input name="メールアドレス" type="text" size="40" data-formrun-type="email" data-formrun-required>
+              <div data-formrun-show-if-error="メールアドレス">メールアドレスを正しく入力してください</div>
+            </div>
+
+            <div class="p-mainContent--formList">
+              <label>お問い合わせ [必須]</label>
+              <textarea name="お問い合わせ" cols="40" rows="4" data-formrun-required></textarea>
+              <div data-formrun-show-if-error="お問い合わせ">お問い合わせ入力してください</div>
+            </div>
+
+            <div class="p-mainContent--formList">
+              <label>個人情報利用同意 [必須]</label>
+              <input type="checkbox" name="個人情報利用同意" data-formrun-required>
+              <div data-formrun-show-if-error="個人情報利用同意">同意してください</div>
+            </div>
+
+            <!-- ボット投稿をブロックするためのタグ -->
+            <div class="_formrun_gotcha">
+              <style media="screen">
+                ._formrun_gotcha {
+                  position: absolute !important;
+                  height: 1px;
+                  width: 1px;
+                  overflow: hidden;
+                }
+              </style>
+              <label for="_formrun_gotcha">If you are a human, ignore this field</label>
+              <input type="text" name="_formrun_gotcha" id="_formrun_gotcha" tabindex="-1">
+            </div>
+            <div class="p-mainContent--formCommit">
+              <div class="g-recaptcha" data-sitekey="6LfqO6kUAAAAABqFK2tZ6LCGIRkGg9XTFTKVc_-L"></div>
+
+              <button type="submit" data-formrun-error-text="未入力の項目があります" data-formrun-submitting-text="送信中...">送信</button>
+            </div>
+            <!-- END mail_send -->
+          </form>
+
+        </div>
+        <!-- //END .p-contactForm__inner -->
+
+      </section>
+    </main>
+    <footer class="l-footer">
+      <div class="sp__nav--wrap">
+        <div class="sp__nav--logo"><a href="index.html" class="logo"><img src="images/petit-chouchou_heading-logo.png" alt="Petit Chou Chou(プティシュシュ)"></a></div>
+        <ul class="sp__nav--list">
+          <li>
+            <a href="index.html" class="link--none">トップページ</a>
+          </li>
+          <li>
+            <a href="menu.html" class="link--none">コース</a>
+          </li>
+          <li>
+            <a href="flow.html" class="link--none">施術の流れ</a>
+          </li>
+          <li>
+            <a href="404.html" class="link--none">ご案内</a>
+          </li>
+          <li>
+            <a href="contact.html" class="link--none">お問い合わせ</a>
+          </li>
+        </ul>
+      </div>
+      <div class="l-footer__btn">
+        <small class="l-footer__copyright">@2019 Petit Chou Chou</small>
+      </div>
+    </footer>
   </section>
-  <footer class="p-footer">
-    <div class="sp__nav--wrap">
-      <div class="sp__nav--logo"><a href="index.html" class="logo"><img src="images/petit-chouchou_heading-logo.png" alt="Petit Chou Chou(プティシュシュ)"></a></div>
-      <ul class="sp__nav--list">
-        <li>
-          <a href="index.html" class="link--none">トップページ</a>
-        </li>
-        <li>
-          <a href="menu.html" class="link--none">コース</a>
-        </li>
-        <li>
-          <a href="flow.html" class="link--none">施術の流れ</a>
-        </li>
-        <li>
-          <a href="404.html" class="link--none">ご案内</a>
-        </li>
-        <li>
-          <a href="contact.html" class="link--none">お問い合わせ</a>
-        </li>
-      </ul>
-    </div>
-    <div class="p-footer__btn">
-      <small class="p-footer__copyright">@2019 Petit Chou Chou</small>
-    </div>
-  </footer>
   <script type="text/javascript">
     document.getElementById("view_today").innerHTML = getNow();
 
