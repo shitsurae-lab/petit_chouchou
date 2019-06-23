@@ -1815,6 +1815,14 @@ padding-top: 48px;
     background: #eae9e6;
     width: 100%;
     margin: 0 auto;
+    padding-top: 56%;
+    position: relative;
+    }
+     @include mq(lg){
+      max-width: 960px;
+    background: #eae9e6;
+    width: 100%;
+    margin: 0 auto;
     padding-top: 40%;
     position: relative;
     }

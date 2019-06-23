@@ -2240,6 +2240,17 @@ body {
     background: #eae9e6;
     width: 100%;
     margin: 0 auto;
+    padding-top: 56%;
+    position: relative;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .p-mainContent--thanksInner {
+    max-width: 960px;
+    background: #eae9e6;
+    width: 100%;
+    margin: 0 auto;
     padding-top: 40%;
     position: relative;
   }
